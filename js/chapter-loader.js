@@ -12,7 +12,8 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, in
     let currentChapterIndex = 0; // Chỉ số chương hiện tại trong chapterIds
     const chapterIds = []; // Mảng lưu trữ ID của các chương
     const isPart1 = storyPath.includes('part1');
-    let lang = localStorage.getItem(`lang_${storyPath}`) || initialLang; // Ngôn ngữ hiện tại
+    // Lấy ngôn ngữ đã lưu, nếu không có thì lấy ngôn ngữ khởi tạo, nếu vẫn không có thì lấy 'vi'
+    let lang = localStorage.getItem(`lang_${storyPath}`) || initialLang || 'vi'; 
     
     // Biến cho Text-to-Speech (TTS)
     let isSpeaking = false;
@@ -40,6 +41,8 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, in
     const ttsButton = document.getElementById('tts-toggle-btn');
     const ttsIcon = document.getElementById('tts-icon');
     const ttsText = document.getElementById('tts-text');
+    
+    // Khai báo thêm Lang Switch Button
     const langSwitchButton = document.getElementById('lang-switch-btn');
     const langSwitchText = document.getElementById('lang-switch-text');
 
@@ -67,7 +70,7 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, in
             voice.lang === 'vi-VN' && preferredViVoices.some(name => voice.name.includes(name))
         ) || voices.find(voice => voice.lang === 'vi-VN');
         
-        // Thiết lập giọng Tiếng Trung
+        // Thiết lập giọng Tiếng Trung (zh-CN, zh-TW)
         const preferredZhVoices = ["Google Mandarin", "Microsoft Kangkang", "Microsoft Huihui", "Google 普通话（中国大陆）"];
         chineseVoice = voices.find(voice => 
             (voice.lang === 'zh-CN' || voice.lang === 'zh-TW') && preferredZhVoices.some(name => voice.name.includes(name))
@@ -163,7 +166,8 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, in
                     // LƯU TRỮ TIÊU ĐỀ ĐA NGÔN NGỮ VÀO DATASET
                     modalLink.dataset.titleVi = data['title_vi'] || `Chương ${i + 1}`;
                     modalLink.dataset.titleEn = data['title_en'] || `Chapter ${i + 1}`;
-                    modalLink.dataset.titleZh = data['title_zh'] || `第 ${i + 1} 章`;
+                    // Đảm bảo hỗ trợ Tiếng Trung
+                    modalLink.dataset.titleZh = data['title_zh'] || `第 ${i + 1} 章`; 
 
                     // Cập nhật tiêu đề theo ngôn ngữ hiện tại
                     const title = data[`title_${lang}`] || data.title_en || modalLink.textContent;
@@ -248,6 +252,7 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, in
             loadScrollPosition(currentChapterId);
         } else {
             const mainElement = document.querySelector('main');
+            // Cuộn lên đầu phần nội dung chính
             const headerOffset = document.getElementById('navbar') ? document.getElementById('navbar').offsetHeight : 80;
             window.scrollTo({ top: mainElement.offsetTop - headerOffset, behavior: 'smooth' });
         }
@@ -385,7 +390,9 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, in
     function updateModalTitles() {
         const modalLinks = modalList.querySelectorAll('.modal-chapter-link');
         modalLinks.forEach(link => {
-            const title = link.dataset[`title${lang.charAt(0).toUpperCase() + lang.slice(1)}`] || link.dataset.titleEn;
+            // Lấy key tiêu đề theo ngôn ngữ mới (ví dụ: titleVi, titleEn, titleZh)
+            const titleKey = `title${lang.charAt(0).toUpperCase() + lang.slice(1)}`;
+            const title = link.dataset[titleKey] || link.dataset.titleEn;
             if (title) {
                 link.textContent = title;
             }
@@ -398,8 +405,8 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, in
     function updateLangSwitchButton() {
         if (!langSwitchButton || !langSwitchText) return;
         
-        // Đặt màu nền mặc định là xanh dương, và đổi nhãn
-        langSwitchButton.classList.remove('bg-blue-600', 'hover:bg-blue-700', 'dark:bg-blue-700', 'dark:hover:bg-blue-800', 'bg-green-600', 'hover:bg-green-700', 'dark:bg-green-700', 'dark:hover:bg-green-800');
+        // Đặt màu nền mặc định là xanh dương
+        langSwitchButton.classList.remove('bg-green-600', 'hover:bg-green-700', 'dark:bg-green-700', 'dark:hover:bg-green-800');
         langSwitchButton.classList.add('bg-blue-600', 'hover:bg-blue-700', 'dark:bg-blue-700', 'dark:hover:bg-blue-800');
 
         if (lang === 'vi') {
@@ -424,9 +431,13 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, in
      */
     function saveState() {
         if (chapterIds.length === 0) return;
+        
+        // Lấy vị trí cuộn hiện tại của cửa sổ
+        const scrollPosition = window.pageYOffset; 
+        
         const state = {
             chapterId: chapterIds[currentChapterIndex],
-            scrollPosition: window.pageYOffset
+            scrollPosition: scrollPosition
         };
         try {
             localStorage.setItem(storageKey, JSON.stringify(state));
@@ -444,6 +455,7 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, in
             if (savedState && savedState.chapterId === chapterId) {
                 // Đảm bảo cuộn sau khi nội dung đã render xong
                 window.setTimeout(() => {
+                    // Sử dụng behavior: 'instant' để tránh giật hình khi tải trang
                     window.scrollTo({ top: savedState.scrollPosition, behavior: 'instant' });
                 }, 100); 
                 return true;
@@ -518,28 +530,22 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, in
             overallProgressBar.style.width = `${overallProgress}%`;
         }
         
-        // 2. Tiến độ Cuộn trong chương hiện tại (Scroll Progress Bar)
+        // 2. Tiến độ Cuộn trong chương hiện tại (Scroll Progress Bar) - Đã Tối Ưu
         if (scrollProgressBar) {
-            const chapterContentRect = chapterContent.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-            const scrollPosition = window.pageYOffset;
-            const headerOffset = document.getElementById('navbar') ? document.getElementById('navbar').offsetHeight : 80;
+            const docElement = document.documentElement;
             
-            // Độ sâu cuộn: Khoảng cách từ đầu cửa sổ đến đầu nội dung chương + độ lệch header
-            const dynamicContentTop = scrollPosition + chapterContentRect.top;
-            const scrollDepth = scrollPosition - dynamicContentTop + headerOffset;
+            // Tính toán tổng chiều cao có thể cuộn (scrollable height)
+            const scrollHeight = docElement.scrollHeight - docElement.clientHeight;
             
-            // Chiều cao có thể đọc: Tổng chiều cao nội dung - Chiều cao cửa sổ (sau khi trừ đi offset)
-            const readableHeight = chapterContent.offsetHeight - windowHeight + headerOffset; 
-            
-            let progress;
-            if (readableHeight <= 0) {
-                progress = 100; 
-            } else {
-                progress = Math.min(100, Math.max(0, (scrollDepth / readableHeight) * 100));
+            let progress = 0;
+            if (scrollHeight > 0) {
+                // Tính toán vị trí cuộn hiện tại / Tổng chiều cao có thể cuộn
+                const scrollTop = window.pageYOffset || docElement.scrollTop;
+                progress = (scrollTop / scrollHeight) * 100;
             }
 
-            scrollProgressBar.style.width = `${progress}%`;
+            // Sử dụng Math.min/Math.max để đảm bảo giá trị nằm trong khoảng [0, 100]
+            scrollProgressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
         }
     }
 
@@ -548,12 +554,14 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, in
     
     prevBtn?.addEventListener('click', () => {
         if (currentChapterIndex > 0) {
-            navigateToChapter(chapterIds[currentChapterIndex - 1], false);
+            // Luôn cuộn về đầu nội dung khi chuyển chương
+            navigateToChapter(chapterIds[currentChapterIndex - 1], false); 
         }
     });
 
     nextBtn?.addEventListener('click', () => {
         if (currentChapterIndex < chapterIds.length - 1) {
+            // Luôn cuộn về đầu nội dung khi chuyển chương
             navigateToChapter(chapterIds[currentChapterIndex + 1], false);
         }
     });
@@ -615,7 +623,7 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, in
     // 2. Ưu tiên Hash > Trạng thái đã lưu > Chương 1
     if (initialHash && chapterIds.includes(initialHash)) {
         startChapterId = initialHash;
-        loadSavedScroll = false; // Nếu có hash, bỏ qua vị trí cuộn đã lưu, cuộn về đầu chương (hoặc vị trí hash)
+        loadSavedScroll = false; // Nếu có hash, bỏ qua vị trí cuộn đã lưu, cuộn về đầu chương
     } else if (!startChapterId) {
         startChapterId = chapterIds[0]; // Mặc định là chương 1
         loadSavedScroll = false;

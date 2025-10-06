@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>About the Author - LEGNAXE (Song Ngữ)</title>
-    <meta content="Tìm hiểu về NMT, tác giả của LEGNAXE, triết lý Cân Bằng, sự ra đời của bộ truyện, và thông tin chi tiết về các thiên thần trong vũ trụ." name="description"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Về Tác Giả LEGNAXE (About The Author)</title>
+    <meta name="description" content="Khám phá hành trình sáng tạo và triết lý đằng sau bộ sử thi LEGNAXE của tác giả NMT.">
+    <meta property="og:title" content="Về Tác Giả NMT - Người Kiến Tạo LEGNAXE">
+    <meta property="og:description" content="Khám phá hành trình sáng tạo và triết lý đằng sau bộ sử thi LEGNAXE của tác giả NMT.">
+    <meta property="og:type" content="article">
+    <meta property="profile:username" content="NMT">
 
-    <!-- Tailwind CSS và Fonts -->
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <script src="https://cdn.tailwindcss.com?plugins=typography,forms,aspect-ratio,line-clamp"></script>
     <script>
         tailwind.config = {
@@ -18,7 +27,7 @@
                         serif: ['Merriweather', 'serif'],
                     },
                     colors: {
-                        primary: '#3b82f6', 
+                        primary: '#3b82f6',
                         'primary-dark': '#2563eb',
                         'accent-light': '#fcd34d', 
                         'accent-dark': '#b45309', 
@@ -27,70 +36,79 @@
             },
         }
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Custom Variables and Structural Styles */
-        :root {
-            --color-primary: #3b82f6;
-            --color-blue-400: #60a5fa;
-            --color-gray-800: #1f2937;
-            --color-gray-700: #374151;
+        /* ================================================= */
+        /* CẬP NHẬT: NỀN GRADIENT TOÀN TRANG (ĐÃ DUY TRÌ) */
+        /* ================================================= */
+        body {
+            /* Light Mode Gradient: Trắng ngà -> Xám nhạt, sạch sẽ */
+            background: linear-gradient(180deg, #F9FAFB 0%, #E5E7EB 100%);
+            background-attachment: fixed;
         }
+        .dark body {
+            /* Dark Mode Gradient: Đen than -> Xám đậm */
+            background: linear-gradient(180deg, #111827 0%, #1F2937 100%);
+            background-attachment: fixed;
+        }
+        /* ================================================= */
 
+        /* Tối ưu hóa Scrollbar cho Dark Mode */
         .dark ::-webkit-scrollbar { width: 10px; }
         .dark ::-webkit-scrollbar-track { background: #111827; }
         .dark ::-webkit-scrollbar-thumb { background-color: #4b5563; border-radius: 20px; border: 2px solid #111827; }
         .dark ::-webkit-scrollbar-thumb:hover { background-color: #6b7280; }
         
+        /* General content card styling */
         .section {
             padding: 2rem 1.5rem;
             margin-bottom: 2rem; 
             border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+            transition: background-color 0.3s;
         }
         .section-light {
-            background-color: #ffffff; 
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
         }
         .dark .section-light {
-            background-color: var(--color-gray-800);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+            background-color: #1f2937;
+            border-color: #374151;
         }
         .section-dark {
-            background-color: var(--color-gray-800); 
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            color: #f3f4f6;
+            background-color: #f3f4f6;
+            border: 1px solid #d1d5db;
         }
         .dark .section-dark {
             background-color: #111827;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+            border-color: #374151;
         }
 
-        .section h2, .section h3 {
-            color: var(--color-primary); 
+        .section h1, .section h2, .section h3 {
+            font-family: 'Inter', sans-serif;
         }
-        .dark .section h2, .dark .section h3 {
-            color: var(--color-blue-400); 
-        }
-
         .excerpt {
             font-style: italic; 
-            border-left: 3px solid var(--color-primary);
+            border-left: 4px solid #3b82f6;
             margin-top: 1rem; margin-bottom: 1rem;
             background-color: rgba(59, 130, 246, 0.05); 
             padding: 0.75rem 1rem;
             border-radius: 0 4px 4px 0;
+            color: #4b5563;
         }
         .dark .excerpt {
-            border-left-color: var(--color-blue-400);
+            border-left-color: #60a5fa;
             background-color: rgba(96, 165, 250, 0.1); 
             color: #d1d5db;
         }
+        /* Video Aspect Ratio Fix for Mobile */
+        .aspect-video {
+            aspect-ratio: 16 / 9;
+        }
     </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300 ease-in-out font-sans antialiased">
-
-    <!-- Header / Navbar -->
+<body class="text-gray-800 dark:text-gray-200 transition-colors duration-300 ease-in-out font-sans antialiased">
+    
+    <!-- Header / Navbar (Responsive) -->
     <header class="sticky top-0 z-50 shadow-lg bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm transition-colors duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
             <div class="logo">
@@ -100,13 +118,14 @@
             </div>
             <nav class="flex items-center space-x-3 sm:space-x-6">
                 <!-- Links -->
-                <a class="text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent-light transition-colors" href="../index.html">Trang Chủ</a>
-                <a class="text-sm sm:text-base font-medium text-primary dark:text-accent-light transition-colors font-bold" href="legnaxeintheuniver.html">Vũ Trụ <i class="fas fa-satellite-dish ml-1"></i></a>
+                <a class="hidden sm:inline-block text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent-light transition-colors" href="../index.html" id="nav-home">Trang Chủ</a>
+                <a class="hidden sm:inline-block text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent-light transition-colors" href="legnaxeintheuniver.html" id="nav-universe">Vũ Trụ</a>
                 
-                <!-- Language Toggle (Select) -->
+                <!-- Language Toggle (Select) - Mobile First -->
                 <select aria-label="Select language" class="text-gray-700 dark:text-gray-300 bg-transparent border-gray-300 dark:border-gray-600 focus:ring-primary focus:border-primary rounded-md text-sm sm:text-base font-medium py-1.5 px-2" id="language-toggle">
                     <option value="vi">Tiếng Việt</option>
                     <option value="en">English</option>
+                    <option value="zh">中文</option>
                 </select>
 
                 <!-- Chế độ Tối Toggle -->
@@ -116,184 +135,324 @@
             </nav>
         </div>
     </header>
+    
+    <main class="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-12">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-center text-gray-900 dark:text-white mb-10" id="main-title">
+            VỀ TÁC GIẢ NMT
+        </h1>
 
-    <!-- Main Content -->
-    <main class="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-12" id="main-content">
-        
-        <!-- ============================================== -->
-        <!-- BILINGUAL CONTENT CONTAINER - ENGLISH -->
-        <!-- ============================================== -->
-        <div class="language-content" id="content-en">
-            <section class="section section-light">
-                <h1 class="text-4xl font-bold text-center mb-4">About the Author</h1>
-                <h2 class="text-2xl font-semibold text-center text-blue-600 dark:text-blue-400 mb-6">NMT - The Visionary Behind LEGNAXE</h2>
-                <div class="image-container flex justify-center">
-                    <img alt="Author NMT" decoding="async" height="600" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/800x600/e0e0e0/757575?text=Author+Image+Not+Found';" src="../images/author_placeholder.jpg" class="max-w-xs w-full rounded-lg shadow-lg" />
-                </div>
-                <p class="mb-4"><strong>NMT, the creative force behind the epic saga <em>LEGNAXE</em></strong>, is a storyteller driven by a deep fascination with cosmic balance, divine struggles, and the intricate tapestry of human emotion. Writing under this pen name, NMT weaves narratives that challenge conventional perspectives and invite readers to explore the profound questions of existence, choice, and consequence.</p>
+        <div class="author-card">
+            
+            <!-- ============================================== -->
+            <!-- BILINGUAL CONTENT CONTAINER - ENGLISH (EN) -->
+            <!-- ============================================== -->
+            <div class="language-content" id="content-en">
+                <section class="section section-light">
+                    <h2 class="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-white">About the Author</h2>
+                    <h3 class="text-2xl font-semibold text-center text-primary dark:text-blue-400 mb-6">NMT - The Visionary Behind LEGNAXE</h3>
+                    <div class="image-container flex justify-center mb-6">
+                        <!-- Placeholder image for the author, styled as a focus point -->
+                        <img alt="Author NMT" decoding="async" height="256" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/256x256/3b82f6/ffffff?text=NMT';" src="../images/author_placeholder.jpg" class="max-w-xs w-64 h-64 rounded-full shadow-lg object-cover ring-4 ring-primary dark:ring-accent-light" />
+                    </div>
+                    <p class="mb-4 text-justify"><strong>NMT, the creative force behind the epic saga <em>LEGNAXE</em></strong>, is a storyteller driven by a deep fascination with cosmic balance, divine struggles, and the intricate tapestry of human emotion. Writing under this pen name, NMT weaves narratives that challenge conventional perspectives and invite readers to explore the profound questions of existence, choice, and consequence.</p>
+                    
+                    <div class="video-player-container mb-6 flex justify-center">
+                        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="rounded-lg shadow-xl w-full max-w-xl aspect-video" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/v0_wNyXe_dA?si=WRQ7GcnGfLElJUkR" title="YouTube video player" width="560"></iframe>
+                    </div>
+                    
+                    <p class="mb-4 text-justify">Based in Vietnam, NMT draws inspiration from a rich blend of ancient mythology, philosophical inquiry, and the subtle nuances of everyday life. The world of LEGNAXE is a reflection of this diverse wellspring, a universe where celestial beings grapple with dilemmas as complex as those faced by humanity.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 flex-wrap">
+                        <a class="read-button bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-center text-sm font-semibold shadow-md transition-colors" href="read-legnaxe_part1_vi.html">
+                            <i class="fas fa-book-open mr-2"></i> Read LEGNAXE Part 1 (VI)
+                        </a>
+                        <a class="read-button bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-center text-sm font-semibold shadow-md transition-colors" href="read-legnaxe_part1_en.html">
+                            <i class="fas fa-book-open mr-2"></i> Read LEGNAXE Part 1 (EN)
+                        </a>
+                    </div>
+                </section>
                 
-                <div class="video-player-container mb-6 flex justify-center">
-                    <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="rounded-lg shadow-lg w-full max-w-xl aspect-video" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/v0_wNyXe_dA?si=WRQ7GcnGfLElJUkR" title="YouTube video player" width="560"></iframe>
-                </div>
+                <section class="section section-dark">
+                    <h2 class="text-3xl font-bold mb-4 text-white">The Genesis of LEGNAXE: Blending Tradition and Innovation</h2>
+                    <p class="mb-4 text-gray-300">The creation of <em>LEGNAXE</em> is a journey in two distinct parts, mirroring NMT's approach to storytelling – a fusion of deep-rooted tradition and bold, imaginative innovation.</p>
+                    
+                    <h3 class="text-2xl font-semibold mt-6 mb-3 text-blue-400">Part 1: Secret of Great Heaven War - Honoring the Foundations</h3>
+                    <div class="image-container mb-4 flex justify-center">
+                        <img alt="Image related to Part 1" decoding="async" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/800x400/1f2937/ffffff?text=Part+1+Image+Not+Found';" src="../images/pages/novels/legnaxe1horizontal.png" class="max-w-lg w-full rounded-lg shadow-md border border-gray-700"/>
+                    </div>
+                    <p class="mb-4 text-gray-300 text-justify">The first part of LEGNAXE provides readers with a detailed, authentic, and profound perspective on the origins of the cosmic struggle. Drawing heavily from epic literature, various scriptures, and ancient myths, NMT meticulously reconstructs the dramatic events of the Great Heaven War. This section is a testament to the author's commitment to exploring and re-interpreting these timeless stories, offering a fresh lens through which the foundational narratives of creation and conflict are vividly brought to life.</p>
+                    <div class="excerpt dark:text-gray-400">
+                        <p>"Amidst the seemingly perfect harmony of Heaven, Lucifer stood on the marble balcony... 'If everything is perfect,' he whispered, 'why do I feel so empty?'"</p>
+                        <p>"Eve stood still, the forbidden fruit resting in her palm... Lucifer's voice crept in: 'She hears, Adam. But she also sees. For the first time, she understands. And you can understand too.'"</p>
+                        <p>"'Lucifer,' the Almighty spoke... 'You and those who followed you into darkness shall be cast out from My light.'"</p>
+                    </div>
+                    
+                    <h3 class="text-2xl font-semibold mt-8 mb-3 text-blue-400">Part 2: Heavenly, Human's Heart - Expanding the Universe</h3>
+                    <div class="image-container mb-4 flex justify-center">
+                        <img alt="Image related to Part 2" decoding="async" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/800x400/1f2937/ffffff?text=Part+2+Image+Not+Found';" src="../images/pages/novels/legnaxe2horizontal.png" class="max-w-lg w-full rounded-lg shadow-md border border-gray-700"/>
+                    </div>
+                    <p class="mb-4 text-gray-300 text-justify">Building upon the established universe and characters from Part 1, the second part of LEGNAXE becomes a canvas for NMT's original creativity. "Heavenly, Human's Heart" ventures beyond the confines of traditional texts, exploring new storylines, delving into the complex psychologies of both celestial and human characters, and examining the far-reaching consequences of the initial conflict. It highlights the intricate connections and shared struggles between the divine and the mortal.</p>
+                    <div class="excerpt dark:text-gray-400">
+                        <p>"God was present... His voice resounded: 'I have given you freedom... Now, I give you the final lesson... Earth... Henceforth, the choice and its consequences are entirely yours.'"</p>
+                        <p>"The Meteor Shower of Souls, carrying Healiangel and other nameless angels, began to pour down onto the blue planet..."</p>
+                        <p>"Lucifer Morningstar appeared, offering to sponsor Hael... 'I see in you a special potential, an unusual light.'"</p>
+                    </div>
+                    
+                    <div class="text-center mt-8">
+                        <a href="legnaxeintheuniver.html" class="inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary-dark transition-colors shadow-lg transform hover:scale-105">
+                            Dive into the LEGNAXE Universe <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </section>
                 
-                <p class="mb-4">Based in Vietnam, NMT draws inspiration from a rich blend of ancient mythology, philosophical inquiry, and the subtle nuances of everyday life. The world of LEGNAXE is a reflection of this diverse wellspring, a universe where celestial beings grapple with dilemmas as complex as those faced by humanity.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 flex-wrap">
-                    <a class="read-button bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-center text-sm" href="read-legnaxe_part1_vi.html">
-                        <i class="fas fa-book-open mr-2"></i> Read LEGNAXE Part 1 (VI)
-                    </a>
-                    <a class="read-button bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-center text-sm" href="read-legnaxe_part1_en.html">
-                        <i class="fas fa-book-open mr-2"></i> Read LEGNAXE Part 1 (EN)
-                    </a>
-                </div>
-            </section>
-            <section class="section section-dark">
-                <h2 class="text-3xl font-bold mb-4">The Genesis of LEGNAXE: Blending Tradition and Innovation</h2>
-                <p class="mb-4">The creation of <em>LEGNAXE</em> is a journey in two distinct parts, mirroring NMT's approach to storytelling – a fusion of deep-rooted tradition and bold, imaginative innovation.</p>
+                <section class="section section-light">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">THE PHILOSOPHY BEHIND THE NARRATIVE</h2>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">NMT's writing is guided by a core philosophy that seeks to challenge simplistic notions of good and evil, divine and mortal. The author believes that true understanding comes from exploring the complexities and contradictions inherent in all beings. Key themes explored in LEGNAXE include:</p>
+                    <ul class="mb-4 space-y-1 list-disc ml-6 text-gray-700 dark:text-gray-300">
+                        <li>The duality of nature: Examining how light and shadow coexist within individuals and the universe.</li>
+                        <li>Free will and destiny: The constant interplay between choice and predetermined paths.</li>
+                        <li>The nature of justice and compassion: How these seemingly opposing forces shape events and characters.</li>
+                        <li>The shared struggles of existence: Highlighting the common ground between angelic and human experiences.</li>
+                    </ul>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">Through these themes, NMT invites readers to look beyond the surface and contemplate the deeper meanings embedded in the cosmic narrative.</p>
+                </section>
                 
-                <h3 class="text-2xl font-semibold mt-6 mb-3">Part 1: Secret of Great Heaven War - Honoring the Foundations</h3>
-                <div class="image-container mb-4 flex justify-center">
-                    <img alt="Image related to Part 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/800x400/e0e0e0/757575?text=Part+1+Image+Not+Found';" src="../images/pages/novels/legnaxe1horizontal.png" class="max-w-lg w-full rounded-lg shadow-md"/>
-                </div>
-                <p class="mb-4">The first part of LEGNAXE provides readers with a detailed, authentic, and profound perspective on the origins of the cosmic struggle. Drawing heavily from epic literature, various scriptures, and ancient myths, NMT meticulously reconstructs the dramatic events of the Great Heaven War. This section is a testament to the author's commitment to exploring and re-interpreting these timeless stories, offering a fresh lens through which the foundational narratives of creation and conflict are vividly brought to life.</p>
-                <div class="excerpt">
-                    <p>"Amidst the seemingly perfect harmony of Heaven, Lucifer stood on the marble balcony... 'If everything is perfect,' he whispered, 'why do I feel so empty?'"</p>
-                    <p>"Eve stood still, the forbidden fruit resting in her palm... Lucifer's voice crept in: 'She hears, Adam. But she also sees. For the first time, she understands. And you can understand too.'"</p>
-                    <p>"'Lucifer,' the Almighty spoke... 'You and those who followed you into darkness shall be cast out from My light.'"</p>
-                </div>
-                <h3 class="text-2xl font-semibold mt-8 mb-3">Part 2: Heavenly, Human's Heart - Expanding the Universe</h3>
-                <div class="image-container mb-4 flex justify-center">
-                    <img alt="Image related to Part 2" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/800x400/e0e0e0/757575?text=Part+2+Image+Not+Found';" src="../images/pages/novels/legnaxe2horizontal.png" class="max-w-lg w-full rounded-lg shadow-md"/>
-                </div>
-                <p class="mb-4">Building upon the established universe and characters from Part 1, the second part of LEGNAXE becomes a canvas for NMT's original creativity. "Heavenly, Human's Heart" ventures beyond the confines of traditional texts, exploring new storylines, delving into the complex psychologies of both celestial and human characters, and examining the far-reaching consequences of the initial conflict. It highlights the intricate connections and shared struggles between the divine and the mortal.</p>
-                <div class="excerpt">
-                    <p>"God was present... His voice resounded: 'I have given you freedom... Now, I give you the final lesson... Earth... Henceforth, the choice and its consequences are entirely yours.'"</p>
-                    <p>"The Meteor Shower of Souls, carrying Healiangel and other nameless angels, began to pour down onto the blue planet..."</p>
-                    <p>"Lucifer Morningstar appeared, offering to sponsor Hael... 'I see in you a special potential, an unusual light.'"</p>
-                </div>
-                <!-- Link to the dedicated universe page -->
-                <div class="text-center mt-8">
-                    <a href="legnaxeintheuniver.html" class="inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary-dark transition-colors shadow-lg">
-                        Dive into the LEGNAXE Universe <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </section>
-            <section class="section section-light">
-                <h2 class="text-3xl font-bold mb-4">THE PHILOSOPHY BEHIND THE NARRATIVE</h2>
-                <p class="mb-4">NMT's writing is guided by a core philosophy that seeks to challenge simplistic notions of good and evil, divine and mortal. The author believes that true understanding comes from exploring the complexities and contradictions inherent in all beings. Key themes explored in LEGNAXE include:</p>
-                <ul class="mb-4 space-y-1 list-disc ml-6">
-                    <li>The duality of nature: Examining how light and shadow coexist within individuals and the universe.</li>
-                    <li>Free will and destiny: The constant interplay between choice and predetermined paths.</li>
-                    <li>The nature of justice and compassion: How these seemingly opposing forces shape events and characters.</li>
-                    <li>The shared struggles of existence: Highlighting the common ground between angelic and human experiences.</li>
-                </ul>
-                <p class="mb-4">Through these themes, NMT invites readers to look beyond the surface and contemplate the deeper meanings embedded in the cosmic narrative.</p>
-            </section>
-            <section class="section section-dark">
-                <h2 class="text-3xl font-bold mb-4">CONNECTING WITH THE STORY AND THE AUTHOR</h2>
-                <p class="mb-4">NMT views storytelling as a collaborative journey between the writer and the reader. The author encourages readers to engage actively with the themes and characters of LEGNAXE, to question, to empathize, and to find their own connections within the sprawling narrative.</p>
-                <p class="mb-4">Stay updated on NMT's work and the LEGNAXE saga through the official website at <a class="text-blue-400 hover:underline" href="https://ivs.id.vn" target="_blank">ivs.id.vn</a>.</p>
-                <p class="mb-4">Thank you for embarking on this cosmic adventure with NMT. As the story unfolds, remember the words of Healiangel: "Balance is not the absence of conflict, but the courage to embrace both light and shadow."</p>
-            </section>
+                <section class="section section-dark">
+                    <h2 class="text-3xl font-bold mb-4 text-white">CONNECTING WITH THE STORY AND THE AUTHOR</h2>
+                    <p class="mb-4 text-gray-300">NMT views storytelling as a collaborative journey between the writer and the reader. The author encourages readers to engage actively with the themes and characters of LEGNAXE, to question, to empathize, and to find their own connections within the sprawling narrative.</p>
+                    <p class="mb-4 text-gray-300">Stay updated on NMT's work and the LEGNAXE saga through the official website at <a class="text-blue-400 hover:underline" href="https://read.minhtriet.online" target="_blank">read.minhtriet.online</a>.</p>
+                    <p class="mb-4 text-gray-300">Thank you for embarking on this cosmic adventure with NMT. As the story unfolds, remember the words of Healiangel: **"Balance is not the absence of conflict, but the courage to embrace both light and shadow."**</p>
+                </section>
+
+                <section class="section section-light mt-8 text-center">
+                    <h2 class="text-3xl font-bold mb-4 text-primary">FIND MORE ABOUT THE AUTHOR (IVS)</h2>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">Explore NMT's professional journey and connection with IVS Education.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://minhtriet.online" target="_blank" class="inline-flex items-center px-8 py-3 bg-red-600 text-white font-semibold rounded-full hover:bg-red-700 transition-colors shadow-lg transform hover:scale-105">
+                            Truy cập minhtriet.online <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                         <a href="https://ivsacademy.edu.vn" target="_blank" class="inline-flex items-center px-8 py-3 bg-green-600 text-white font-semibold rounded-full hover:bg-green-700 transition-colors shadow-lg transform hover:scale-105">
+                            Giới thiệu về IVS <i class="fas fa-graduation-cap ml-2"></i>
+                        </a>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- ============================================== -->
+            <!-- BILINGUAL CONTENT CONTAINER - VIETNAMESE (VI) -->
+            <!-- ============================================== -->
+            <div class="language-content hidden" id="content-vi">
+                <section class="section section-light">
+                    <h2 class="text-3xl font-bold text-center mb-4 uppercase text-gray-900 dark:text-white">VỀ TÁC GIẢ</h2>
+                    <h3 class="text-2xl font-semibold text-center text-primary dark:text-blue-400 mb-6 uppercase">NMT - NGƯỜI KIẾN TẠO LEGNAXE</h3>
+                    <div class="image-container flex justify-center mb-6">
+                        <img alt="Tác giả NMT" decoding="async" height="256" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/256x256/3b82f6/ffffff?text=NMT';" src="../images/author_placeholder.jpg" class="max-w-xs w-64 h-64 rounded-full shadow-lg object-cover ring-4 ring-primary dark:ring-accent-light"/>
+                    </div>
+                    <p class="mb-4 text-justify"><strong>NMT, người đứng sau bộ sử thi <em>LEGNAXE</em></strong>, là một người kể chuyện với niềm đam mê sâu sắc về cán cân vũ trụ, những cuộc đấu tranh thiêng liêng và tấm thảm phức tạp của cảm xúc con người. Viết dưới bút danh này, NMT dệt nên những câu chuyện thách thức các góc nhìn thông thường và mời gọi độc giả khám phá những câu hỏi sâu sắc về sự tồn tại, lựa chọn và hậu quả.</p>
+                    
+                    <div class="video-player-container mb-6 flex justify-center">
+                        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="rounded-lg shadow-xl w-full max-w-xl aspect-video" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/v0_wNyXe_dA?si=WRQ7GcnGfLElJUkR" title="YouTube video player" width="560"></iframe>
+                    </div>
+
+                    <p class="mb-4 text-justify">Hiện đang sống tại Việt Nam, NMT lấy cảm hứng từ sự pha trộn phong phú của thần thoại cổ xưa, những truy vấn triết học và những sắc thái tinh tế của cuộc sống hàng ngày. Thế giới trong LEGNAXE là sự phản chiếu của nguồn cảm hứng đa dạng này, một vũ trụ nơi các thực thể thiên giới phải đối mặt với những tình huống phức tạp như những gì con người gặp phải.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 flex-wrap">
+                        <a class="read-button bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-center text-sm font-semibold shadow-md transition-colors" href="read-legnaxe_part1_vi.html">
+                            <i class="fas fa-book-open mr-2"></i> Đọc LEGNAXE Phần 1 (TV)
+                        </a>
+                        <a class="read-button bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-center text-sm font-semibold shadow-md transition-colors" href="read-legnaxe_part1_en.html">
+                            <i class="fas fa-book-open mr-2"></i> Read LEGNAXE Part 1 (EN)
+                        </a>
+                    </div>
+                </section>
+                
+                <section class="section section-dark">
+                    <h2 class="text-3xl font-bold mb-4 text-white">Sự Ra Đời Của LEGNAXE: Hòa Quyện Truyền Thống và Sáng Tạo</h2>
+                    <p class="mb-4 text-gray-300">Sự kiến tạo nên <em>LEGNAXE</em> là một hành trình gồm hai phần riêng biệt, phản ánh cách tiếp cận kể chuyện của NMT – sự kết hợp giữa truyền thống sâu sắc và sự sáng tạo táo bạo, giàu trí tưởng tượng.</p>
+                    
+                    <h3 class="text-2xl font-semibold mt-6 mb-3 text-blue-400">PHẦN 1: Bí Mật Cuộc Đại Chiến Thiên Giới - Tôn Vinh Nền Tảng</h3>
+                    <div class="image-container mb-4 flex justify-center">
+                        <img alt="Ảnh liên quan đến Phần 1" decoding="async" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/800x400/1f2937/ffffff?text=Ảnh+Phần+1+Không+Tìm+Thấy';" src="../images/pages/novels/legnaxe1horizontal.png" class="max-w-lg w-full rounded-lg shadow-md border border-gray-700"/>
+                    </div>
+                    <p class="mb-4 text-gray-300 text-justify">Phần đầu tiên của LEGNAXE đi sâu vào những câu chuyện nền tảng về sáng thế và xung đột. NMT tái hiện một cách tỉ mỉ những sự kiện đầy kịch tính của Cuộc Đại Chiến Thiên Giới. Phần này là minh chứng cho cam kết của tác giả trong việc khám phá và diễn giải lại những câu chuyện vượt thời gian, mang đến cho độc giả một góc nhìn chi tiết, chân thật và sâu sắc về nguồn gốc của cuộc đấu tranh vũ trụ và các thực thể tham gia.</p>
+                    <div class="excerpt dark:text-gray-400">
+                        <p>"Giữa bản hòa ca tưởng chừng hoàn hảo của Thiên Đàng, Lucifer đứng trên ban công cẩm thạch... 'Nếu mọi thứ đều hoàn hảo,' y thì thầm, 'tại sao ta lại cảm thấy trống rỗng đến thế?'"</p>
+                        <p>"Eve đứng sững, trái cấm nằm gọn trong lòng bàn tay... Giọng Lucifer len lỏi: 'Nàng nghe thấy, Adam. Nhưng nàng cũng thấy. Lần đầu tiên, nàng hiểu. Và ngươi cũng có thể hiểu.'" </p>
+                        <p>"'Lucifer,' Đấng Tối Cao cất tiếng... 'Ngươi và những kẻ đã theo ngươi vào bóng tối sẽ bị trục xuất khỏi ánh sáng của Ta.'"</p>
+                    </div>
+                    
+                    <h3 class="text-2xl font-semibold mt-8 mb-3 text-blue-400">PHẦN 2: Thiên Thượng, Lòng Người - Mở Rộng Vũ Trụ</h3>
+                    <div class="image-container mb-4 flex justify-center">
+                        <img alt="Ảnh liên quan đến Phần 2" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/800x400/1f2937/ffffff?text=Ảnh+Phần+2+Không+Tìm+Thấy';" src="../images/pages/novels/legnaxe2horizontal.png" class="max-w-lg w-full rounded-lg shadow-md border border-gray-700"/>
+                    </div>
+                    <p class="mb-4 text-gray-300 text-justify">Xây dựng trên nền tảng vũ trụ và các nhân vật đã được thiết lập từ Phần 1, Phần 2 của LEGNAXE trở thành bức vẽ cho sự sáng tạo nguyên bản của NMT. "Thiên Thượng, Lòng Người" vượt ra ngoài giới hạn của các văn bản truyền thống, khám phá những tuyến truyện mới, đào sâu vào tâm lý phức tạp của cả nhân vật thiên giới và con người.</p>
+                    <div class="excerpt dark:text-gray-400">
+                        <p>"Thiên Chúa hiện diện... Giọng Ngài vang lên: 'Ta đã trao cho các ngươi tự do... Giờ đây, Ta trao cho các ngươi bài học cuối cùng... Trái Đất... Từ nay, quyền lựa chọn và hậu quả hoàn toàn thuộc về các ngươi.'" </p>
+                        <p>"Cơn Mưa Sao Băng Linh Hồn, mang theo Healiangel và những thiên thần vô danh khác, bắt đầu trút xuống hành tinh xanh..."</p>
+                        <p>"Lucifer Morningstar xuất hiện, đề nghị tài trợ cho Hael... 'Ta nhìn thấy ở cậu một tiềm năng đặc biệt, một ánh sáng khác thường.'"</p>
+                    </div>
+                    
+                    <div class="text-center mt-8">
+                        <a href="legnaxeintheuniver.html" class="inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary-dark transition-colors shadow-lg transform hover:scale-105">
+                            Khám phá Vũ Trụ LEGNAXE <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </section>
+                
+                <section class="section section-light">
+                    <h2 class="text-3xl font-bold mb-4 uppercase text-gray-900 dark:text-white">TRIẾT LÝ ĐẰNG SAU CÂU CHUYỆN</h2>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">Việc viết lách của NMT được dẫn dắt bởi một triết lý cốt lõi nhằm thách thức những quan niệm đơn giản về thiện và ác, thần thánh và phàm trần. Các chủ đề chính được khám phá trong LEGNAXE bao gồm:</p>
+                    <ul class="mb-4 space-y-1 list-disc ml-6 text-gray-700 dark:text-gray-300">
+                        <li>Tính nhị nguyên của bản chất: Kiểm tra cách ánh sáng và bóng tối cùng tồn tại trong mỗi cá nhân và vũ trụ.</li>
+                        <li>Tự do ý chí và định mệnh: Sự tương tác không ngừng giữa lựa chọn và những con đường đã định trước.</li>
+                        <li>Bản chất của công lý và lòng trắc ẩn: Cách những lực lượng dường như đối lập này định hình các sự kiện và nhân vật.</li>
+                        <li>Những cuộc đấu tranh chung của sự tồn tại: Làm nổi bật điểm chung giữa trải nghiệm của thiên thần và con người.</li>
+                    </ul>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">Thông qua những chủ đề này, NMT mời gọi độc giả nhìn xa hơn bề mặt và chiêm nghiệm những ý nghĩa sâu sắc ẩn chứa trong câu chuyện vũ trụ.</p>
+                </section>
+                
+                <section class="section section-dark">
+                    <h2 class="text-3xl font-bold mb-4 uppercase text-white">KẾT NỐI VỚI CÂU CHUYỆN VÀ TÁC GIẢ</h2>
+                    <p class="mb-4 text-gray-300">NMT xem việc kể chuyện là một hành trình hợp tác giữa người viết và độc giả. Tác giả khuyến khích độc giả tương tác tích cực với các chủ đề và nhân vật của LEGNAXE.</p>
+                    <p class="mb-4 text-gray-300">Luôn cập nhật về các tác phẩm của NMT và bộ sử thi LEGNAXE thông qua trang web chính thức tại <a class="text-blue-400 hover:underline" href="https://read.minhtriet.online" target="_blank">read.minhtriet.online</a>.</p>
+                    <p class="mb-4 text-gray-300">Cảm ơn bạn đã cùng NMT dấn thân vào cuộc phiêu lưu vũ trụ này. Hãy nhớ lời của Healiangel: **"Cân bằng không phải là sự vắng mặt của xung đột, mà là lòng dũng cảm để đón nhận cả ánh sáng và bóng tối."**</p>
+                </section>
+                
+                <section class="section section-light mt-8 text-center">
+                    <h2 class="text-3xl font-bold mb-4 text-primary uppercase">TÌM HIỂU THÊM VỀ TÁC GIẢ (IVS)</h2>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">Khám phá hành trình chuyên môn và công nghệ của NMT cùng IVS Education.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://minhtriet.online" target="_blank" class="inline-flex items-center px-8 py-3 bg-red-600 text-white font-semibold rounded-full hover:bg-red-700 transition-colors shadow-lg transform hover:scale-105">
+                            Truy cập minhtriet.online <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                         <a href="https://ivsacademy.edu.vn" target="_blank" class="inline-flex items-center px-8 py-3 bg-green-600 text-white font-semibold rounded-full hover:bg-green-700 transition-colors shadow-lg transform hover:scale-105">
+                            Giới thiệu về IVS <i class="fas fa-graduation-cap ml-2"></i>
+                        </a>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ============================================== -->
+            <!-- BILINGUAL CONTENT CONTAINER - CHINESE (ZH) -->
+            <!-- ============================================== -->
+            <div class="language-content hidden" id="content-zh">
+                <section class="section section-light">
+                    <h2 class="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-white">关于作者 (About the Author)</h2>
+                    <h3 class="text-2xl font-semibold text-center text-primary dark:text-blue-400 mb-6">NMT - LEGNAXE 背后的远见者</h3>
+                    <div class="image-container flex justify-center mb-6">
+                        <img alt="作者 NMT" decoding="async" height="256" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/256x256/3b82f6/ffffff?text=NMT';" src="../images/author_placeholder.jpg" class="max-w-xs w-64 h-64 rounded-full shadow-lg object-cover ring-4 ring-primary dark:ring-accent-light" />
+                    </div>
+                    <p class="mb-4 text-justify"><strong>NMT，史诗传奇 <em>LEGNAXE</em> 背后的创意力量</strong>，是一位深受宇宙平衡、神圣斗争和错综复杂的人类情感所吸引的叙事者。NMT 以这个笔名写作，编织出挑战传统视角的叙事，邀请读者探索关于存在、选择和后果的深刻问题。</p>
+                    
+                    <div class="video-player-container mb-6 flex justify-center">
+                        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="rounded-lg shadow-xl w-full max-w-xl aspect-video" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/v0_wNyXe_dA?si=WRQ7GcnGfLElJUkR" title="YouTube video player" width="560"></iframe>
+                    </div>
+
+                    <p class="mb-4 text-justify">NMT 的创作灵感来源于越南，融合了古代神话、哲学探究和日常生活的微妙之处。LEGNAXE 的世界是这种多样化源泉的反映，一个天界生物与人类面临着同样复杂困境的宇宙。</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 flex-wrap">
+                        <a class="read-button bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-center text-sm font-semibold shadow-md transition-colors" href="read-legnaxe_part1_vi.html">
+                            <i class="fas fa-book-open mr-2"></i> 阅读 LEGNAXE 第一部 (VI)
+                        </a>
+                        <a class="read-button bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-center text-sm font-semibold shadow-md transition-colors" href="read-legnaxe_part1_en.html">
+                            <i class="fas fa-book-open mr-2"></i> Read LEGNAXE Part 1 (EN)
+                        </a>
+                    </div>
+                </section>
+                
+                <section class="section section-dark">
+                    <h2 class="text-3xl font-bold mb-4 text-white">LEGNAXE 的起源：传统与创新的融合</h2>
+                    <p class="mb-4 text-gray-300"><em>LEGNAXE</em> 的创作是一个分为两个不同部分旅程，反映了 NMT 的叙事方式——深厚的传统和大胆、富有想象力的创新的融合。</p>
+                    
+                    <h3 class="text-2xl font-semibold mt-6 mb-3 text-blue-400">第一部：天界大战的秘密 - 尊重基础</h3>
+                    <div class="image-container mb-4 flex justify-center">
+                        <img alt="与第一部相关的图片" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/800x400/1f2937/ffffff?text=Part+1+Image+Not+Found';" src="../images/pages/novels/legnaxe1horizontal.png" class="max-w-lg w-full rounded-lg shadow-md border border-gray-700"/>
+                    </div>
+                    <p class="mb-4 text-gray-300 text-justify">LEGNAXE 的第一部提供了对宇宙斗争起源的详细、真实和深刻的视角。NMT 大量借鉴史诗文学、各种经文和古代神话，精心重构了天界大战的戏剧性事件。本节证明了作者致力于探索和重新诠释这些永恒故事的承诺，提供了一个新的视角，通过它生动地展现了创世与冲突的基础叙事。</p>
+                    <div class="excerpt dark:text-gray-400">
+                        <p>"在天堂看似完美的和谐中，路西法站在大理石阳台上……'如果一切都完美，'他低声说，'我为什么会感到如此空虚？'"</p>
+                        <p>"夏娃静止不动，禁果放在她的手掌上……路西法的声音渗透进来：'她听到了，亚当。但她也看到了。这是她第一次明白。你也可以明白。'"</p>
+                        <p>"'路西法，'全能者开口说……'你和那些追随你进入黑暗的人，将被驱逐出我的光明。'"</p>
+                    </div>
+                    
+                    <h3 class="text-2xl font-semibold mt-8 mb-3 text-blue-400">第二部：天堂与人心 - 扩展宇宙</h3>
+                    <div class="image-container mb-4 flex justify-center">
+                        <img alt="与第二部相关的图片" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/800x400/1f2937/ffffff?text=Part+2+Image+Not+Found';" src="../images/pages/novels/legnaxe2horizontal.png" class="max-w-lg w-full rounded-lg shadow-md border border-gray-700"/>
+                    </div>
+                    <p class="mb-4 text-gray-300 text-justify">在第一部既定的宇宙和角色的基础上，LEGNAXE 的第二部成为了 NMT 原始创造力的画布。“天堂与人心”超越了传统文本的限制，探索了新的故事情节，深入研究了天界和人类角色的复杂心理，并审视了最初冲突的深远后果。它突出了神圣与凡人之间错综复杂的联系和共同的斗争。</p>
+                    <div class="excerpt dark:text-gray-400">
+                        <p>"上帝在场……他的声音回荡着：'我已经给了你自由……现在，我给你最后的教训……地球……从今以后，选择和后果完全由你决定。'"</p>
+                        <p>"载着治愈天使和其他无名天使的灵魂流星雨开始倾泻到这颗蓝色星球上……"</p>
+                        <p>"路西法·晨星出现，提议赞助赫尔……'我在你身上看到了特殊的潜力，一种不同寻常的光芒。'"</p>
+                    </div>
+                    
+                    <div class="text-center mt-8">
+                        <a href="legnaxeintheuniver.html" class="inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary-dark transition-colors shadow-lg transform hover:scale-105">
+                            深入 LEGNAXE 宇宙 <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </section>
+                
+                <section class="section section-light">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">叙事背后的哲学</h2>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">NMT 的写作以一种核心哲学为指导，旨在挑战关于善恶、神圣与凡人的简单化观念。作者相信，真正的理解来自于探索所有生物固有的复杂性和矛盾。LEGNAXE 探索的关键主题包括：</p>
+                    <ul class="mb-4 space-y-1 list-disc ml-6 text-gray-700 dark:text-gray-300">
+                        <li>二元性：审视光明与黑暗如何在个体和宇宙中并存。</li>
+                        <li>自由意志与命运：选择与预定路径之间持续的相互作用。</li>
+                        <li>正义与慈悲的本质：这些看似对立的力量如何塑造事件和人物。</li>
+                        <li>存在的共同斗争：突出天使和人类经历之间的共同点。</li>
+                    </ul>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">通过这些主题，NMT 邀请读者超越表面，思考嵌入在宇宙叙事中的更深层含义。</p>
+                </section>
+                
+                <section class="section section-dark">
+                    <h2 class="text-3xl font-bold mb-4 text-white">与故事和作者的连接</h2>
+                    <p class="mb-4 text-gray-300">NMT 将讲故事视为作者和读者之间的协作旅程。作者鼓励读者积极参与 LEGNAXE 的主题和人物，提问、共情，并在广阔的叙事中找到自己的联系。</p>
+                    <p class="mb-4 text-gray-300">通过官方网站 <a class="text-blue-400 hover:underline" href="https://read.minhtriet.online" target="_blank">read.minhtriet.online</a> 了解 NMT 的作品和 LEGNAXE 传奇的最新动态。</p>
+                    <p class="mb-4 text-gray-300">感谢您与 NMT 一起踏上这场宇宙冒险。随着故事的展开，请记住治愈天使的话：**“平衡不是没有冲突，而是拥抱光明与黑暗的勇气。”**</p>
+                </section>
+
+                <section class="section section-light mt-8 text-center">
+                    <h2 class="text-3xl font-bold mb-4 text-primary">了解更多关于作者的信息</h2>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">探索 NMT 在 LEGNAXE 之外的专业和技术旅程。</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://minhtriet.online" target="_blank" class="inline-flex items-center px-8 py-3 bg-red-600 text-white font-semibold rounded-full hover:bg-red-700 transition-colors shadow-lg transform hover:scale-105">
+                            访问 minhtriet.online <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                         <a href="https://ivsacademy.edu.vn" target="_blank" class="inline-flex items-center px-8 py-3 bg-green-600 text-white font-semibold rounded-full hover:bg-green-700 transition-colors shadow-lg transform hover:scale-105">
+                            Giới thiệu về IVS <i class="fas fa-graduation-cap ml-2"></i>
+                        </a>
+                    </div>
+                </section>
+            </div>
+            
         </div>
 
-        <!-- ============================================== -->
-        <!-- BILINGUAL CONTENT CONTAINER - VIETNAMESE -->
-        <!-- ============================================== -->
-        <div class="language-content hidden" id="content-vi">
-            <section class="section section-light">
-                <h1 class="text-4xl font-bold text-center mb-4 uppercase">VỀ TÁC GIẢ</h1>
-                <h2 class="text-2xl font-semibold text-center text-blue-600 dark:text-blue-400 mb-6 uppercase">NMT - NGƯỜI KIẾN TẠO LEGNAXE</h2>
-                <div class="image-container flex justify-center">
-                    <img alt="Tác giả NMT" decoding="async" height="600" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/800x600/e0e0e0/757575?text=Ảnh+Tác+Giả+Không+Tìm+Thấy';" src="../images/author_placeholder.jpg" class="max-w-xs w-full rounded-lg shadow-lg"/>
-                </div>
-                <p class="mb-4"><strong>NMT, người đứng sau bộ sử thi <em>LEGNAXE</em></strong>, là một người kể chuyện với niềm đam mê sâu sắc về cán cân vũ trụ, những cuộc đấu tranh thiêng liêng và tấm thảm phức tạp của cảm xúc con người. Viết dưới bút danh này, NMT dệt nên những câu chuyện thách thức các góc nhìn thông thường và mời gọi độc giả khám phá những câu hỏi sâu sắc về sự tồn tại, lựa chọn và hậu quả.</p>
-                
-                <div class="video-player-container mb-6 flex justify-center">
-                    <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="rounded-lg shadow-lg w-full max-w-xl aspect-video" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/v0_wNyXe_dA?si=WRQ7GcnGfLElJUkR" title="YouTube video player" width="560"></iframe>
-                </div>
-
-                <p class="mb-4">Hiện đang sống tại Việt Nam, NMT lấy cảm hứng từ sự pha trộn phong phú của thần thoại cổ xưa, những truy vấn triết học và những sắc thái tinh tế của cuộc sống hàng ngày. Thế giới trong LEGNAXE là sự phản chiếu của nguồn cảm hứng đa dạng này, một vũ trụ nơi các thực thể thiên giới phải đối mặt với những tình huống phức tạp như những gì con người gặp phải.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 flex-wrap">
-                    <a class="read-button bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-center text-sm" href="read-legnaxe_part1_vi.html">
-                        <i class="fas fa-book-open mr-2"></i> Đọc LEGNAXE Phần 1 (TV)
-                    </a>
-                    <a class="read-button bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-center text-sm" href="read-legnaxe_part1_en.html">
-                        <i class="fas fa-book-open mr-2"></i> Read LEGNAXE Part 1 (EN)
-                    </a>
-                </div>
-            </section>
-            <section class="section section-dark">
-                <h2 class="text-3xl font-bold mb-4">Sự Ra Đời Của LEGNAXE: Hòa Quyện Truyền Thống và Sáng Tạo</h2>
-                <p class="mb-4">Sự kiến tạo nên <em>LEGNAXE</em> là một hành trình gồm hai phần riêng biệt, phản ánh cách tiếp cận kể chuyện của NMT – sự kết hợp giữa truyền thống sâu sắc và sự sáng tạo táo bạo, giàu trí tưởng tượng.</p>
-                
-                <h3 class="text-2xl font-semibold mt-6 mb-3">PHẦN 1: Bí Mật Cuộc Đại Chiến Thiên Giới - Tôn Vinh Nền Tảng</h3>
-                <div class="image-container mb-4 flex justify-center">
-                    <img alt="Ảnh liên quan đến Phần 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/800x400/e0e0e0/757575?text=Ảnh+Phần+1+Không+Tìm+Thấy';" src="../images/pages/novels/legnaxe1horizontal.png" class="max-w-lg w-full rounded-lg shadow-md"/>
-                </div>
-                <p class="mb-4">Phần đầu tiên của LEGNAXE đi sâu vào những câu chuyện nền tảng về sáng thế và xung đột. NMT tái hiện một cách tỉ mỉ những sự kiện đầy kịch tính của Cuộc Đại Chiến Thiên Giới. Phần này là minh chứng cho cam kết của tác giả trong việc khám phá và diễn giải lại những câu chuyện vượt thời gian, mang đến cho độc giả một góc nhìn chi tiết, chân thật và sâu sắc về nguồn gốc của cuộc đấu tranh vũ trụ và các thực thể tham gia.</p>
-                <div class="excerpt">
-                    <p>"Giữa bản hòa ca tưởng chừng hoàn hảo của Thiên Đàng, Lucifer đứng trên ban công cẩm thạch... 'Nếu mọi thứ đều hoàn hảo,' y thì thầm, 'tại sao ta lại cảm thấy trống rỗng đến thế?'"</p>
-                    <p>"Eve đứng sững, trái cấm nằm gọn trong lòng bàn tay... Giọng Lucifer len lỏi: 'Nàng nghe thấy, Adam. Nhưng nàng cũng thấy. Lần đầu tiên, nàng hiểu. Và ngươi cũng có thể hiểu.'" </p>
-                    <p>"'Lucifer,' Đấng Tối Cao cất tiếng... 'Ngươi và những kẻ đã theo ngươi vào bóng tối sẽ bị trục xuất khỏi ánh sáng của Ta.'"</p>
-                </div>
-                <h3 class="text-2xl font-semibold mt-8 mb-3">PHẦN 2: Thực Thể Thiên Giới và Trái Tim Con Người - Mở Rộng Vũ Trụ</h3>
-                <div class="image-container mb-4 flex justify-center">
-                    <img alt="Ảnh liên quan đến Phần 2" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/800x400/e0e0e0/757575?text=Ảnh+Phần+2+Không+Tìm+Thấy';" src="../images/pages/novels/legnaxe2horizontal.png" class="max-w-lg w-full rounded-lg shadow-md"/>
-                </div>
-                <p class="mb-4">Xây dựng trên nền tảng vũ trụ và các nhân vật đã được thiết lập từ Phần 1, Phần 2 của LEGNAXE trở thành bức vẽ cho sự sáng tạo nguyên bản của NMT. "Heavenly, Human's Heart" vượt ra ngoài giới hạn của các văn bản truyền thống, khám phá những tuyến truyện mới, đào sâu vào tâm lý phức tạp của cả nhân vật thiên giới và con người.</p>
-                <div class="excerpt">
-                    <p>"Thiên Chúa hiện diện... Giọng Ngài vang lên: 'Ta đã trao cho các ngươi tự do... Giờ đây, Ta trao cho các ngươi bài học cuối cùng... Trái Đất... Từ nay, quyền lựa chọn và hậu quả hoàn toàn thuộc về các ngươi.'" </p>
-                    <p>"Cơn Mưa Sao Băng Linh Hồn, mang theo Healiangel và những thiên thần vô danh khác, bắt đầu trút xuống hành tinh xanh..."</p>
-                    <p>"Lucifer Morningstar xuất hiện, đề nghị tài trợ cho Hael... 'Ta nhìn thấy ở cậu một tiềm năng đặc biệt, một ánh sáng khác thường.'"</p>
-                </div>
-                <!-- Link to the dedicated universe page -->
-                <div class="text-center mt-8">
-                    <a href="legnaxeintheuniver.html" class="inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary-dark transition-colors shadow-lg">
-                        Khám phá Vũ Trụ LEGNAXE <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </section>
-            <section class="section section-light">
-                <h2 class="text-3xl font-bold mb-4 uppercase">TRIẾT LÝ ĐẰNG SAU CÂU CHUYỆN</h2>
-                <p class="mb-4">Việc viết lách của NMT được dẫn dắt bởi một triết lý cốt lõi nhằm thách thức những quan niệm đơn giản về thiện và ác, thần thánh và phàm trần. Các chủ đề chính được khám phá trong LEGNAXE bao gồm:</p>
-                <ul class="mb-4 space-y-1 list-disc ml-6">
-                    <li>Tính nhị nguyên của bản chất: Kiểm tra cách ánh sáng và bóng tối cùng tồn tại trong mỗi cá nhân và vũ trụ.</li>
-                    <li>Tự do ý chí và định mệnh: Sự tương tác không ngừng giữa lựa chọn và những con đường đã định trước.</li>
-                    <li>Bản chất của công lý và lòng trắc ẩn: Cách những lực lượng dường như đối lập này định hình các sự kiện và nhân vật.</li>
-                    <li>Những cuộc đấu tranh chung của sự tồn tại: Làm nổi bật điểm chung giữa trải nghiệm của thiên thần và con người.</li>
-                </ul>
-                <p class="mb-4">Thông qua những chủ đề này, NMT mời gọi độc giả nhìn xa hơn bề mặt và chiêm nghiệm những ý nghĩa sâu sắc ẩn chứa trong câu chuyện vũ trụ.</p>
-            </section>
-            <section class="section section-dark">
-                <h2 class="text-3xl font-bold mb-4 uppercase">KẾT NỐI VỚI CÂU CHUYỆN VÀ TÁC GIẢ</h2>
-                <p class="mb-4">NMT xem việc kể chuyện là một hành trình hợp tác giữa người viết và độc giả. Tác giả khuyến khích độc giả tương tác tích cực với các chủ đề và nhân vật của LEGNAXE.</p>
-                <p class="mb-4">Luôn cập nhật về các tác phẩm của NMT và bộ sử thi LEGNAXE thông qua trang web chính thức tại <a class="text-blue-400 hover:underline" href="https://ivs.id.vn" target="_blank">ivs.id.vn</a>.</p>
-                <p class="mb-4">Cảm ơn bạn đã cùng NMT dấn thân vào cuộc phiêu lưu vũ trụ này. Hãy nhớ lời của Healiangel: **"Cân bằng không phải là sự vắng mặt của xung đột, mà là lòng dũng cảm để đón nhận cả ánh sáng và bóng tối."**</p>
-            </section>
-        </div>
     </main>
+    
+    <footer id="footer-placeholder"></footer>
 
-    <!-- Footer -->
-    <footer class="bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 transition-colors duration-300 ease-in-out mt-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
-            <p class="text-sm text-gray-500 dark:text-gray-400">© <span id="current-year">2025</span> LEGNAXE. All rights reserved.</p>
-        </div>
-    </footer>
+    <!-- Scripts -->
+    <!-- Giả định các script utils.js, language.js, loadComponents.js tồn tại và được gọi ở footer -->
+    <!-- <script src="/js/utils.js"></script> -->
+    <!-- <script src="/js/language.js"></script> -->
+    <!-- <script src="/js/loadComponents.js"></script> -->
 
-    <!-- JavaScript for Theme and Language Toggle -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const htmlElement = document.documentElement;
             const themeToggle = document.getElementById('theme-toggle');
             const languageToggle = document.getElementById('language-toggle');
-            const currentYearSpan = document.getElementById('current-year');
-            const contentEn = document.getElementById('content-en');
-            const contentVi = document.getElementById('content-vi');
-
+            const mainTitle = document.getElementById('main-title');
+            
+            // Map tiêu đề chính theo ngôn ngữ
+            const titles = {
+                vi: "VỀ TÁC GIẢ NMT",
+                en: "ABOUT THE AUTHOR NMT",
+                zh: "关于作者 NMT"
+            };
+            
             // --- Theme Toggle Logic ---
             function applyTheme(isDark) {
                 htmlElement.classList.toggle('dark', isDark);
-                const icon = themeToggle.querySelector('i');
+                const icon = themeToggle?.querySelector('i');
                 if (icon) {
                     icon.classList.toggle('fa-moon', !isDark);
                     icon.classList.toggle('fa-sun', isDark);
@@ -306,21 +465,36 @@
             let isDarkMode = savedTheme === 'dark' || (savedTheme === null && prefersDarkScheme);
             applyTheme(isDarkMode);
 
-            themeToggle.addEventListener('click', () => {
+            themeToggle?.addEventListener('click', () => {
                 isDarkMode = !htmlElement.classList.contains('dark');
                 applyTheme(isDarkMode);
             });
 
             // --- Language Toggle Logic ---
             function applyLanguage(lang) {
-                if (contentEn) contentEn.classList.toggle('hidden', lang !== 'en');
-                if (contentVi) contentVi.classList.toggle('hidden', lang !== 'vi');
+                const contents = [
+                    { element: document.getElementById('content-vi'), lang: 'vi' },
+                    { element: document.getElementById('content-en'), lang: 'en' },
+                    { element: document.getElementById('content-zh'), lang: 'zh' } 
+                ];
+
+                contents.forEach(item => {
+                    if (item.element) {
+                         item.element.classList.toggle('hidden', lang !== item.lang);
+                    }
+                });
+                
+                // Cập nhật tiêu đề chính
+                if (mainTitle) mainTitle.textContent = titles[lang] || titles.vi;
+                
                 localStorage.setItem('language', lang);
-                if (languageToggle) languageToggle.value = lang; 
-                htmlElement.lang = lang; 
+                if (languageToggle) languageToggle.value = lang;
+                
+                // Cập nhật lang attribute cho HTML
+                htmlElement.lang = lang === 'zh' ? 'zh-CN' : (lang === 'vi' ? 'vi' : 'en');
             }
 
-            // Lấy ngôn ngữ đã lưu (ưu tiên VI vì trang này là VI trong các tệp truyện)
+            // Khởi tạo ngôn ngữ (ưu tiên VI)
             const savedLanguage = localStorage.getItem('language') || 'vi'; 
             applyLanguage(savedLanguage);
             
@@ -328,11 +502,6 @@
                 languageToggle.addEventListener('change', (e) => {
                     applyLanguage(e.target.value);
                 });
-            }
-
-            // --- Misc ---
-            if (currentYearSpan) {
-                currentYearSpan.textContent = new Date().getFullYear();
             }
         });
     </script>

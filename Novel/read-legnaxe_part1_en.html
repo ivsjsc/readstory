@@ -43,16 +43,20 @@
     <style>
         html { scroll-behavior: smooth; }
         
-        /* Gradient Background for the entire page (Mobile First) */
+        /* ================================================= */
+        /* CẬP NHẬT: NỀN GRADIENT TOÀN TRANG (PART 1 - COSMIC) */
+        /* ================================================= */
         body {
             /* Light Mode Gradient: Tinh tế từ trắng ngà sang xám nhạt */
             background: linear-gradient(180deg, #F9FAFB 0%, #E5E7EB 100%);
             background-attachment: fixed;
         }
-        /* Dark Mode Gradient: Chuyển từ đen than sang xám đậm */
         .dark body {
-            background: linear-gradient(180deg, #111827 0%, #1F2937 100%);
+            /* Dark Mode Gradient: Đen than -> Tím Cosmic (Unique touch for Heaven/Mystery) */
+            background: linear-gradient(180deg, #111827 0%, #291a33 100%);
+            background-attachment: fixed;
         }
+        /* ================================================= */
 
         /* Scrollbar Styling (Dark Mode) */
         .dark ::-webkit-scrollbar { width: 10px; }
@@ -93,19 +97,32 @@
         </div>
 
         <!-- Cập nhật Font Size Controls để tích hợp TTS Button (Mobile-First) -->
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 mb-6 p-3 bg-white dark:bg-gray-800 rounded-lg shadow-inner">
-            <!-- 1. Font Size Controls Group -->
-            <div class="flex space-x-4">
-                <button id="decrease-font-btn" class="text-sm bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 py-1.5 px-3 rounded-full focus:outline-none focus:ring-2 focus:ring-primary" data-lang-key="font_size_decrease">A-</button>
-                <button id="reset-font-btn" class="text-base bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 py-1.5 px-3 rounded-full focus:outline-none focus:ring-2 focus:ring-primary" data-lang-key="font_size_reset">Reset</button>
-                <button id="increase-font-btn" class="text-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 py-1.5 px-3 rounded-full focus:outline-none focus:ring-2 focus:ring-primary" data-lang-key="font_size_increase">A+</button>
+        <div class="flex flex-col gap-3 mb-6 p-3 bg-white dark:bg-gray-800 rounded-xl shadow-2xl">
+            
+            <!-- Hàng 1: Font Controls -->
+            <div class="flex items-center justify-between gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg shadow-inner border border-gray-100 dark:border-gray-700">
+                <span class="text-sm font-semibold text-gray-500 dark:text-gray-400 min-w-[70px]" data-lang-key="font_size_label">Font Size:</span>
+                <div class="flex space-x-3">
+                    <button id="decrease-font-btn" class="text-sm bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 py-1.5 px-3 rounded-full focus:outline-none focus:ring-2 focus:ring-primary font-bold" data-lang-key="font_size_decrease">A-</button>
+                    <button id="reset-font-btn" class="text-base bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 py-1.5 px-3 rounded-full focus:outline-none focus:ring-2 focus:ring-primary font-bold" data-lang-key="font_size_reset">A</button>
+                    <button id="increase-font-btn" class="text-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 py-1.5 px-3 rounded-full focus:outline-none focus:ring-2 focus:ring-primary font-bold" data-lang-key="font_size_increase">A+</button>
+                </div>
             </div>
             
-            <!-- 2. TTS Button (Play/Pause) -->
-            <button id="tts-toggle-btn" class="w-full sm:w-auto px-4 py-2 rounded-xl font-semibold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 transition-all duration-300 ease-in-out flex items-center justify-center dark:bg-indigo-700 dark:hover:bg-indigo-800" title="Text to Speech">
-                <i id="tts-icon" class="fas fa-play mr-2"></i>
-                <span id="tts-text">Read Story</span>
-            </button>
+            <!-- Hàng 2: TTS và Ngôn ngữ -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+                <!-- 2a. TTS Button (Play/Pause) -->
+                <button id="tts-toggle-btn" class="w-full sm:w-1/2 px-4 py-2 rounded-xl font-semibold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 transition-all duration-300 ease-in-out flex items-center justify-center dark:bg-indigo-700 dark:hover:bg-indigo-800" title="Text to Speech">
+                    <i id="tts-icon" class="fas fa-play mr-2"></i>
+                    <span id="tts-text">Read Story</span>
+                </button>
+                
+                <!-- 2b. Language Switch Button (MỚI) -->
+                <button id="lang-switch-btn" class="w-full sm:w-1/2 px-4 py-2 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-300 ease-in-out flex items-center justify-center dark:bg-blue-700 dark:hover:bg-blue-800" title="Switch language">
+                    <i class="fas fa-language mr-2"></i>
+                    <span id="lang-switch-text">Switch to Vietnamese</span>
+                </button>
+            </div>
         </div>
 
         <div class="story-content-wrapper bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-2xl transition-colors duration-300 ease-in-out">

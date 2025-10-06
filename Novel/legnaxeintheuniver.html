@@ -39,6 +39,21 @@
             --color-gray-600: #4b5563;
         }
 
+        /* ================================================= */
+        /* CẬP NHẬT: THÊM NỀN GRADIENT CHO TOÀN BỘ TRANG */
+        /* ================================================= */
+        body {
+            /* Light Mode Gradient: Tinh tế từ trắng ngà sang xám nhạt */
+            background: linear-gradient(180deg, #F9FAFB 0%, #E5E7EB 100%);
+            background-attachment: fixed; /* Giữ cố định nền khi cuộn */
+        }
+        .dark body {
+            /* Dark Mode Gradient: Chuyển từ đen than sang xám đậm */
+            background: linear-gradient(180deg, #111827 0%, #1F2937 100%);
+            background-attachment: fixed;
+        }
+        /* ================================================= */
+
         .dark ::-webkit-scrollbar { width: 10px; }
         .dark ::-webkit-scrollbar-track { background: #111827; }
         .dark ::-webkit-scrollbar-thumb { background-color: #4b5563; border-radius: 20px; border: 2px solid #111827; }
@@ -108,9 +123,9 @@
         .gallery-item img:hover { transform: scale(1.05); }
     </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300 ease-in-out font-sans antialiased">
+<body class="text-gray-800 dark:text-gray-200 transition-colors duration-300 ease-in-out font-sans antialiased">
 
-    <!-- Header / Navbar -->
+    <!-- Header / Navbar (Responsive) -->
     <header class="sticky top-0 z-50 shadow-lg bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm transition-colors duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
             <div class="logo">
@@ -119,15 +134,15 @@
                 </a>
             </div>
             <nav class="flex items-center space-x-3 sm:space-x-6">
-                <!-- Links -->
-                <a class="text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent-light transition-colors" href="../index.html">Trang Chủ</a>
-                <a class="text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent-light transition-colors" href="author-about.html">Tác Giả</a>
+                <!-- Links (Ẩn/Hiện linh hoạt) -->
+                <a class="hidden sm:inline-block text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent-light transition-colors" href="../index.html">Trang Chủ</a>
+                <a class="hidden sm:inline-block text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent-light transition-colors" href="author-about.html">Tác Giả</a>
                 
-                <!-- Language Toggle (Select) -->
+                <!-- Language Toggle (Select) - Visible on Mobile & Desktop -->
                 <select aria-label="Select language" class="text-gray-700 dark:text-gray-300 bg-transparent border-gray-300 dark:border-gray-600 focus:ring-primary focus:border-primary rounded-md text-sm sm:text-base font-medium py-1.5 px-2" id="language-toggle">
                     <option value="vi">Tiếng Việt</option>
                     <option value="en">English</option>
-                    <option value="zh">中文</option> <!-- Đã thêm Tiếng Trung -->
+                    <option value="zh">中文</option>
                 </select>
 
                 <!-- Chế độ Tối Toggle -->
@@ -224,6 +239,7 @@
             <section class="section section-light">
                 <h2 class="text-2xl font-semibold text-center text-blue-600 dark:text-blue-400 mb-6">LEGNAXE Gallery</h2>
                 <p class="text-center mb-6 text-gray-700 dark:text-gray-300">Explore visual inspirations from the world of LEGNAXE.</p>
+                <!-- Thêm khả năng cuộn ngang thân thiện với mobile -->
                 <div class="gallery-scroll-box">
                     <div class="gallery-item"><img alt="LEGNAXE Image 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/pages/novels/pic-legnaxe3.jpg"/></div>
                     <div class="gallery-item"><img alt="LEGNAXE Image 2" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/pages/novels/pic-legnaxe4.jpg"/></div>
@@ -354,18 +370,18 @@
                     </li>
                     <li><strong>II. Other Angels (其他天使)</strong>
                         <ul class="list-disc ml-6 space-y-1">
-                            <li>Metatron (梅塔特隆) – 天界书记官。</li>
-                            <li>Raziel (拉结尔) – 神秘天使。</li>
-                            <li>Chamuel (卡麦尔) – 爱与和平的天使。</li>
-                            <li>Healiangel (治愈天使/赫利亚尔) – 治愈与渴望的天使。</li>
-                            <li>Raguel (拉贵尔) – 公正天使。</li>
-                            <li>Belial (彼列) – 欺骗天使（已堕落）。</li>
+                            <li>Metatron (梅塔特隆) – 天界书记官.</li>
+                            <li>Raziel (拉结尔) – 神秘天使.</li>
+                            <li>Chamuel (卡麦尔) – 爱与和平的天使.</li>
+                            <li>Healiangel (治愈天使/赫利亚尔) – 治愈与渴望的天使.</li>
+                            <li>Raguel (拉贵尔) – 公正天使.</li>
+                            <li>Belial (彼列) – 欺骗天使（已堕落）.</li>
                         </ul>
                     </li>
                     <li><strong>III. Fallen Angels (堕落天使 - 主要对手)</strong>
                         <ul class="list-disc ml-6 space-y-1">
-                            <li>Leviathan (利维坦) – 骄傲的魔王。</li>
-                            <li>Asmodeus (阿斯摩太) – 淫欲的恶魔。</li>
+                            <li>Leviathan (利维坦) – 骄傲的魔王.</li>
+                            <li>Asmodeus (阿斯摩太) – 淫欲的恶魔.</li>
                         </ul>
                     </li>
                 </ul>
@@ -406,13 +422,13 @@
                 <h2 class="text-2xl font-semibold text-center text-blue-600 dark:text-blue-400 mb-6">LEGNAXE 画廊 (Thư Viện Ảnh)</h2>
                 <p class="text-center mb-6 text-gray-700 dark:text-gray-300">探索 LEGNAXE 世界的视觉灵感。</p>
                 <div class="gallery-scroll-box">
-                    <div class="gallery-item"><img alt="LEGNAXE Image 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/pages/novels/pic-legnaxe3.jpg"/></div>
-                    <div class="gallery-item"><img alt="LEGNAXE Image 2" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/pages/novels/pic-legnaxe4.jpg"/></div>
-                    <div class="gallery-item"><img alt="LEGNAXE Image 3" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/pages/novels/pic-legnaxe5.jpg"/></div>
-                    <div class="gallery-item"><img alt="LEGNAXE Image 4" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/pages/novels/pic-legnaxe6.jpg"/></div>
-                    <div class="gallery-item"><img alt="Angel Gabriel 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/angels/angel-gabriel1.jpeg"/></div>
-                    <div class="gallery-item"><img alt="Angel Michael 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/angels/angel-michael1.jpeg"/></div>
-                    <div class="gallery-item"><img alt="Angel 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/angels/angel1.png"/></div>
+                    <div class="gallery-item"><img alt="Hình ảnh LEGNAXE 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Không+Tìm+Thấy+Ảnh'" src="../images/pages/novels/pic-legnaxe3.jpg"/></div>
+                    <div class="gallery-item"><img alt="Hình ảnh LEGNAXE 2" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Không+Tìm+Thấy+Ảnh'" src="../images/pages/novels/pic-legnaxe4.jpg"/></div>
+                    <div class="gallery-item"><img alt="Hình ảnh LEGNAXE 3" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Không+Tìm+Thấy+Ảnh'" src="../images/pages/novels/pic-legnaxe5.jpg"/></div>
+                    <div class="gallery-item"><img alt="Hình ảnh LEGNAXE 4" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Không+Tìm+Thấy+Ảnh'" src="../images/pages/novels/pic-legnaxe6.jpg"/></div>
+                    <div class="gallery-item"><img alt="Thiên thần Gabriel 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Không+Tìm+Thấy+Ảnh'" src="../images/angels/angel-gabriel1.jpeg"/></div>
+                    <div class="gallery-item"><img alt="Thiên thần Michael 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Không+Tìm+Thấy+Ảnh'" src="../images/angels/angel-michael1.jpeg"/></div>
+                    <div class="gallery-item"><img alt="Thiên thần 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Không+Tìm+Thấy+Ảnh'" src="../images/angels/angel1.png"/></div>
                 </div>
             </section>
         </div>

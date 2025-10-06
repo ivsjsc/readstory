@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>LEGNAXE - Trình Đọc Truyện Song Ngữ: Huyền Thoại Thiên Đàng và Trần Gian</title>
-    <meta content="Đọc bộ truyện LEGNAXE song ngữ (Việt - Anh). Khám phá huyền thoại về cuộc đại chiến Thiên Đàng, sự ra đời của loài người và hành trình tìm kiếm sự cân bằng của Healiangel." name="description"/>
+    <meta content="Đọc bộ truyện LEGNAXE song ngữ (Việt - Anh). Khám phá huyền thoại về cuộc đại chiến Thiên Đàng và cơ hội hợp tác xuất bản miễn phí cho các tác giả khác." name="description"/>
     
     <!-- Tailwind CSS và Fonts -->
     <script src="https://cdn.tailwindcss.com?plugins=typography,forms,aspect-ratio,line-clamp"></script>
@@ -36,6 +36,20 @@
         .dark ::-webkit-scrollbar-thumb { background-color: #4b5563; border-radius: 20px; border: 2px solid #111827; }
         .dark ::-webkit-scrollbar-thumb:hover { background-color: #6b7280; }
 
+        /* ================================================= */
+        /* NỀN GRADIENT TOÀN TRANG (Trung tính) */
+        /* ================================================= */
+        body {
+            /* Light Mode Gradient: Trắng ngà -> Xám nhạt */
+            background: linear-gradient(180deg, #F9FAFB 0%, #E5E7EB 100%);
+            background-attachment: fixed;
+        }
+        .dark body {
+            /* Dark Mode Gradient: Đen than -> Xám đậm */
+            background: linear-gradient(180deg, #111827 0%, #1F2937 100%);
+            background-attachment: fixed;
+        }
+
         /* Custom Hero Styling */
         .hero-background {
             background-image: url('images/pages/novels/legnaxe-hero-bg.jpg'); /* Giả định có ảnh nền hấp dẫn */
@@ -56,9 +70,19 @@
             background-color: rgba(17, 24, 39, 0.8);
             backdrop-filter: blur(3px);
         }
+        
+        .section-cooperate {
+            background-color: #dbeafe; /* Blue 100 */
+            border: 1px solid #93c5fd; /* Blue 300 */
+        }
+        .dark .section-cooperate {
+            background-color: #1e3a8a; /* Dark Blue 800 */
+            border: 1px solid #3b82f6; /* Blue 500 */
+        }
+        
     </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300 ease-in-out font-sans antialiased">
+<body class="text-gray-800 dark:text-gray-200 transition-colors duration-300 ease-in-out font-sans antialiased">
 
     <!-- Header / Navbar -->
     <header class="sticky top-0 z-50 shadow-lg bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm transition-colors duration-300" id="navbar">
@@ -111,7 +135,7 @@
                 Tuyển Tập Truyện Song Ngữ
             </h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
                 
                 <!-- Novel Card 1: Part 1 - Bí mật cuộc đại chiến Thiên Đàng -->
                 <div class="novel-card bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300 border border-gray-200 dark:border-gray-700">
@@ -125,7 +149,7 @@
                             Bí mật cuộc đại chiến Thiên Đàng
                         </p>
                         <p class="text-gray-600 dark:text-gray-400 mb-6 line-clamp-3">
-                            Khám phá nguồn gốc của xung đột vũ trụ, sự sa ngã của Lucifer và hành động hy sinh đầy nghịch lý của Healiangel đã tạo ra Tấm Màn ngăn cách các cõi giới. Đây là nơi mọi thứ bắt đầu.
+                            Khám phá nguồn gốc của xung đột vũ trụ, sự sa ngã của Lucifer và hành động hy sinh đầy nghịch lý của Healiangel. Đây là nơi mọi thứ bắt đầu.
                         </p>
                         <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
                             <a href="Novel/read-legnaxe_part1_vi.html" class="flex-1 text-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors shadow-md">
@@ -162,7 +186,49 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Novel Card 3: Truyện Ngắn Đang Cập Nhật -->
+                <div class="novel-card bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 border border-gray-200 dark:border-gray-700 opacity-70 hover:opacity-100">
+                    <img src="https://placehold.co/800x300/FCD34D/1F2937?text=Truyện+Ngắn+Mới" alt="New Short Story Cover" class="w-full h-56 object-cover border-b border-gray-300 dark:border-gray-700">
+                    <div class="p-6">
+                        <h3 class="text-3xl font-serif font-bold text-yellow-600 dark:text-accent-light mb-2">
+                            Truyện Ngắn
+                        </h3>
+                        <p class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">
+                            Đang Cập Nhật: Bằng Hữu Vô Danh
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6 line-clamp-3">
+                            Khám phá những câu chuyện độc lập, ngắn gọn về các nhân vật phụ trong Vũ Trụ LEGNAXE. Nội dung xoay quanh cuộc sống phàm nhân của các thiên thần vô danh khác.
+                        </p>
+                        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                            <button disabled class="flex-1 text-center px-6 py-3 bg-gray-400 text-white font-semibold rounded-xl cursor-not-allowed shadow-md">
+                                Sắp Ra Mắt <i class="fas fa-hourglass-half ml-2"></i>
+                            </button>
+                            <button disabled class="flex-1 text-center px-6 py-3 bg-gray-300 text-gray-600 font-semibold rounded-xl cursor-not-allowed dark:bg-gray-700 dark:text-gray-400 shadow-md">
+                                Coming Soon <i class="fas fa-hourglass-half ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
+            </div>
+        </section>
+
+        <!-- Section Hợp Tác Tác Giả Mới -->
+        <section id="cooperation" class="max-w-4xl mx-auto px-4 py-12 sm:py-16 mt-12 mb-16 section-cooperate rounded-2xl shadow-2xl text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-blue-800 dark:text-blue-200">
+                <i class="fas fa-handshake mr-3"></i> Cơ Hội Hợp Tác Tác Giả
+            </h2>
+            <p class="text-lg mb-6 text-gray-700 dark:text-gray-300">
+                Chúng tôi sẵn lòng chào đón các tác giả khác để cùng xuất bản truyện song ngữ (miễn phí) trên nền tảng này. Hãy để tác phẩm của bạn vươn xa hơn.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="Novel/author-about.html#cooperate-section" class="inline-flex items-center px-8 py-3 bg-red-600 text-white font-semibold rounded-full hover:bg-red-700 transition-colors shadow-lg transform hover:scale-105">
+                    Xem Chi Tiết Hợp Tác <i class="fas fa-info-circle ml-2"></i>
+                </a>
+                <a href="mailto:n.bi2993@gmail.com" class="inline-flex items-center px-8 py-3 bg-green-600 text-white font-semibold rounded-full hover:bg-green-700 transition-colors shadow-lg transform hover:scale-105">
+                    Liên Hệ Ngay <i class="fas fa-envelope ml-2"></i>
+                </a>
             </div>
         </section>
 
@@ -174,8 +240,10 @@
             <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">© <span id="current-year">2025</span> LEGNAXE. All rights reserved. Author: NMT</p>
             <div class="footer-links space-x-4">
                 <a href="Novel/author-about.html" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-accent-light transition-colors">Về Tác Giả</a>
+                <a href="https://ivsacademy.edu.vn" target="_blank" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-accent-light transition-colors">Giới thiệu về IVS</a>
                 <a href="#" id="footer-lang-toggle" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-accent-light transition-colors">English Version</a>
             </div>
+            <p class="text-xs text-gray-400 dark:text-gray-500 mt-2">Truyện được phát hành độc quyền trên <a href="https://read.minhtriet.online" target="_blank" class="text-blue-500 hover:underline">read.minhtriet.online</a></p>
         </div>
     </footer>
 
@@ -210,38 +278,7 @@
             });
 
             // --- Language Toggle Logic ---
-            // Trang chủ này được thiết kế theo cấu trúc VI.
-            // Để chuyển sang EN, ta sẽ chuyển hướng đến một index_en.html (giả định)
-            // hoặc, đơn giản hơn, là chuyển hướng đến trang đọc EN.
-            
-            // Hiện tại, ta sẽ giả định trang này luôn là VI, và nút sẽ chuyển hướng
-            // đến phiên bản Tiếng Anh của danh sách truyện.
-            
-            function updateLanguageLinks(isEnglish) {
-                // Giả định trang hiện tại là Tiếng Việt
-                const langUrlPart1 = isEnglish ? 'read-legnaxe_part1_en.html' : 'read-legnaxe_part1_vi.html';
-                const langUrlPart2 = isEnglish ? 'read-legnaxe_part2_en.html' : 'read-legnaxe_part2_vi.html';
-
-                // Cập nhật các liên kết trong Novel Cards
-                document.querySelector('.novel-card:nth-child(1) a:nth-child(1)').href = 'Novel/read-legnaxe_part1_vi.html';
-                document.querySelector('.novel-card:nth-child(1) a:nth-child(2)').href = 'Novel/read-legnaxe_part1_en.html';
-                document.querySelector('.novel-card:nth-child(2) a:nth-child(1)').href = 'Novel/read-legnaxe_part2_vi.html';
-                document.querySelector('.novel-card:nth-child(2) a:nth-child(2)').href = 'Novel/read-legnaxe_part2_en.html';
-
-                // Cập nhật liên kết footer
-                if (isEnglish) {
-                    footerLangToggle.textContent = 'Vietnamese Version';
-                    footerLangToggle.onclick = () => window.location.href = 'index.html'; // Quay lại VI
-                    langToggle.onclick = () => window.location.href = 'index.html';
-                } else {
-                    footerLangToggle.textContent = 'English Version';
-                    footerLangToggle.onclick = () => window.location.href = 'Novel/index_en.html'; // Giả định có index EN
-                    langToggle.onclick = () => window.location.href = 'Novel/index_en.html';
-                }
-            }
-
-            // Do chỉ có 1 index.html, ta sẽ giả định nó luôn là VI và nút toggle sẽ chuyển hướng sang EN.
-            // Vì không có index_en.html, ta sẽ chuyển hướng đến Part 1 EN.
+            // Nút toggle sẽ chuyển hướng đến Part 1 EN, như đã thống nhất
             langToggle.addEventListener('click', () => {
                  window.location.href = 'Novel/read-legnaxe_part1_en.html';
             });
