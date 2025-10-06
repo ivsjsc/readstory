@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>LEGNAXE Universe - Khám phá Vũ Trụ (Song Ngữ)</title>
+    <meta content="Danh sách chi tiết các thiên thần, nhân vật, và bối cảnh vũ trụ trong bộ truyện LEGNAXE. Thiên thần trên Trái Đất và vai trò Khóa Cân Bằng." name="description"/>
+
+    <!-- Tailwind CSS và Fonts -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography,forms,aspect-ratio,line-clamp"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        primary: '#3b82f6', 
+                        'primary-dark': '#2563eb',
+                        'accent-light': '#fcd34d', 
+                        'accent-dark': '#b45309', 
+                    }
+                }
+            },
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Variables and Structural Styles */
+        :root {
+            --color-primary: #3b82f6;
+            --color-blue-400: #60a5fa;
+            --color-gray-800: #1f2937;
+            --color-gray-700: #374151;
+            --color-gray-600: #4b5563;
+        }
+
+        .dark ::-webkit-scrollbar { width: 10px; }
+        .dark ::-webkit-scrollbar-track { background: #111827; }
+        .dark ::-webkit-scrollbar-thumb { background-color: #4b5563; border-radius: 20px; border: 2px solid #111827; }
+        .dark ::-webkit-scrollbar-thumb:hover { background-color: #6b7280; }
+        
+        .section {
+            padding: 2rem 1.5rem;
+            margin-bottom: 2rem; 
+            border-radius: 1rem;
+        }
+        .section-light {
+            background-color: #ffffff; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .dark .section-light {
+            background-color: var(--color-gray-800);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+        }
+        .section-dark {
+            background-color: var(--color-gray-800); 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            color: #f3f4f6;
+        }
+        .dark .section-dark {
+            background-color: #111827;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+        }
+
+        .section h2, .section h3 {
+            color: var(--color-primary); 
+        }
+        .dark .section h2, .dark .section h3 {
+            color: var(--color-blue-400); 
+        }
+
+        .excerpt {
+            font-style: italic; 
+            border-left: 3px solid var(--color-primary);
+            margin-top: 1rem; margin-bottom: 1rem;
+            background-color: rgba(59, 130, 246, 0.05); 
+            padding: 0.75rem 1rem;
+            border-radius: 0 4px 4px 0;
+        }
+        .dark .excerpt {
+            border-left-color: var(--color-blue-400);
+            background-color: rgba(96, 165, 250, 0.1); 
+            color: #d1d5db;
+        }
+        .gallery-scroll-box {
+            display: flex; overflow-x: auto; gap: 1rem; padding: 1rem;
+            background-color: #e5e7eb;
+            border-radius: 8px; box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+            -webkit-overflow-scrolling: touch; scrollbar-width: thin; 
+        }
+        .dark .gallery-scroll-box {
+            background-color: var(--color-gray-700);
+        }
+        .gallery-item {
+            flex-shrink: 0; width: 150px; height: 150px;
+            position: relative; overflow: hidden; border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .gallery-item img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery-item img:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300 ease-in-out font-sans antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 shadow-lg bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm transition-colors duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+            <div class="logo">
+                <a aria-label="LEGNAXE Home" href="../index.html" class="text-3xl font-extrabold text-primary dark:text-accent-light tracking-wide hover:opacity-80 transition-opacity">
+                    LEGNAXE
+                </a>
+            </div>
+            <nav class="flex items-center space-x-3 sm:space-x-6">
+                <!-- Links -->
+                <a class="text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent-light transition-colors" href="../index.html">Trang Chủ</a>
+                <a class="text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent-light transition-colors" href="author-about.html">Tác Giả</a>
+                
+                <!-- Language Toggle (Select) -->
+                <select aria-label="Select language" class="text-gray-700 dark:text-gray-300 bg-transparent border-gray-300 dark:border-gray-600 focus:ring-primary focus:border-primary rounded-md text-sm sm:text-base font-medium py-1.5 px-2" id="language-toggle">
+                    <option value="vi">Tiếng Việt</option>
+                    <option value="en">English</option>
+                    <option value="zh">中文</option> <!-- Đã thêm Tiếng Trung -->
+                </select>
+
+                <!-- Chế độ Tối Toggle -->
+                <button aria-label="Toggle light/dark mode" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent-light focus:outline-none p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 ease-in-out" id="theme-toggle">
+                    <i class="fas fa-moon text-xl"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-12" id="main-content">
+        
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-center mb-10 text-gray-900 dark:text-white">
+            Vũ Trụ LEGNAXE (LEGNAXE Universe)
+        </h1>
+        
+        <!-- ============================================== -->
+        <!-- BILINGUAL CONTENT CONTAINER - ENGLISH -->
+        <!-- ============================================== -->
+        <div class="language-content" id="content-en">
+            
+            <section class="section section-light">
+                <h2 class="text-3xl font-bold mb-4">EXPLORING THE WORLD OF LEGNAXE</h2>
+                <p class="mb-4">LEGNAXE is not just a story but a vibrant world filled with mysteries, characters, and profound philosophies. Dive deeper into the main characters, key locations, and intriguing side stories within the LEGNAXE universe.</p>
+                <ul class="mb-4 space-y-3 list-disc ml-6">
+                    <li><strong>Healiangel:</strong> An angel who stands on the razor-thin boundary between light and shadow, bearing the mission to protect or shatter the harmony between these opposing forces. He is tempted not by power but by the desire to surpass—not the world, but himself. His intriguing nature makes him a figure who can be judged by any faction in an instant.</li>
+                    <li><strong>Celestial Pinnacle:</strong> The site of critical gatherings for celestial beings, holding ancient secrets. <em>The Celestial Pinnacle is not merely a place but a symbol of power and the fragile balance between forces.</em></li>
+                    <li><strong>The Journey of Mortals:</strong> Stories of mortal characters who have altered the course of celestial history. <em>They are ordinary people with extraordinary choices, leaving an indelible mark on both worlds.</em></li>
+                    <li><strong>The Eternal Flame:</strong> A mystical fire believed to be the source of life and power, yet also the cause of endless wars. <em>Who will be brave enough to touch this flame and face its consequences?</em></li>
+                    <li><strong>The Cosmic Library:</strong> An infinite repository of knowledge, storing secrets about the creation and collapse of worlds. <em>Those who enter this library must pay a price, but is knowledge worth the sacrifice?</em></li>
+                </ul>
+                <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mt-6 mb-3">Prominent Angel Names You Might Not Know Yet?</h3>
+                <ul class="mb-4 space-y-2 list-disc ml-6">
+                    <li><strong>I. Archangels</strong>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li>Lucifer – The fallen angel, once the Morning Star of Heaven.</li>
+                            <li>Michael (Micae) – Leader of the heavenly host.</li>
+                            <li>Gabriel (Jibril) – The messenger angel.</li>
+                            <li>Raphael – The angel of healing.</li>
+                            <li>Uriel – The angel of light and wisdom.</li>
+                        </ul>
+                    </li>
+                    <li><strong>II. Other Angels</strong>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li>Metatron – Heavenly scribe (Judaism).</li>
+                            <li>Raziel – Angel of divine mysteries (Kabbalah).</li>
+                            <li>Chamuel – Angel of love and peace.</li>
+                            <li>Healiangel – Angel of healing &amp; aspiration</li>
+                            <li>Raguel – Angel of justice.</li>
+                            <li>Belial – Angel of deceit (Fallen).</li>
+                        </ul>
+                    </li>
+                    <li><strong>III. Fallen Angels (Key Adversaries)</strong>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li>Leviathan – Demon king of pride.</li>
+                            <li>Asmodeus – Demon of lust.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section class="section section-dark">
+                <h2 class="text-3xl font-bold mb-4">ANGELS ON EARTH</h2>
+                <p class="mb-4">After the <strong>Great Heaven's War</strong>, many angels were swept into the <strong>Soul Meteor Shower</strong>, causing them to be reborn as humans on Earth, stripped of memories and powers. Some fallen angels, like Lucifer, voluntarily came to Earth, while others might have been sent by Heaven to oversee or protect the light on Earth.</p>
+                <ul class="mb-4 space-y-3 list-disc ml-6">
+                    <li><strong>1. Healiangel (Hael):</strong>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li><strong>Status:</strong> Lost memories, reborn as a human in a rural village in Vietnam, raised by Mrs. Lan.</li>
+                            <li><strong>Role:</strong> The protagonist, the "Key of Balance," possessing healing abilities and distinctive emerald eyes.</li>
+                            <li><strong>Journey:</strong> Working for Lucifer in Los Angeles, searching for angelic siblings through energy signs.</li>
+                        </ul>
+                    </li>
+                    <li><strong>2. Lucifer (Lucifer Morningstar):</strong>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li><strong>Status:</strong> Fallen angel, retains memories/partial powers, disguised as a wealthy heir in Los Angeles.</li>
+                            <li><strong>Role:</strong> Manipulates Hael and hunts for reincarnated angels to serve his mysterious purpose.</li>
+                        </ul>
+                    </li>
+                    <li><strong>3. Nameless Angels in the Soul Meteor Shower:</strong>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li><strong>Status:</strong> Lost memories and powers, reborn as humans, scattered across the globe.</li>
+                            <li><strong>Identifying Signs:</strong> Emerald light, healing abilities, surviving accidents, or dreams of Heaven.</li>
+                        </ul>
+                    </li>
+                    <li><strong>4. Kael:</strong>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li><strong>Status:</strong> Morningstar Foundation contact in the Middle East, suspected to be a reincarnated angel.</li>
+                            <li><strong>Role:</strong> Assists Hael in his "balancing" mission.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p class="mb-4">Hael's journey is fraught with challenges as he seeks his angelic siblings, faces Lucifer's manipulations, and unravels Earth's mysteries. Continue following to uncover more wonders from the **LEGNAXE** universe, where every story brings a profound lesson and unexpected surprises!</p>
+            </section>
+            <section class="section section-light">
+                <h2 class="text-2xl font-semibold text-center text-blue-600 dark:text-blue-400 mb-6">LEGNAXE Gallery</h2>
+                <p class="text-center mb-6 text-gray-700 dark:text-gray-300">Explore visual inspirations from the world of LEGNAXE.</p>
+                <div class="gallery-scroll-box">
+                    <div class="gallery-item"><img alt="LEGNAXE Image 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/pages/novels/pic-legnaxe3.jpg"/></div>
+                    <div class="gallery-item"><img alt="LEGNAXE Image 2" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/pages/novels/pic-legnaxe4.jpg"/></div>
+                    <div class="gallery-item"><img alt="LEGNAXE Image 3" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/pages/novels/pic-legnaxe5.jpg"/></div>
+                    <div class="gallery-item"><img alt="LEGNAXE Image 4" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/pages/novels/pic-legnaxe6.jpg"/></div>
+                    <div class="gallery-item"><img alt="Angel Gabriel 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/angels/angel-gabriel1.jpeg"/></div>
+                    <div class="gallery-item"><img alt="Angel Michael 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/angels/angel-michael1.jpeg"/></div>
+                    <div class="gallery-item"><img alt="Angel 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/angels/angel1.png"/></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- BILINGUAL CONTENT CONTAINER - VIETNAMESE -->
+        <!-- ============================================== -->
+        <div class="language-content hidden" id="content-vi">
+            
+            <section class="section section-light">
+                <h2 class="text-3xl font-bold mb-4 uppercase">KHÁM PHÁ THẾ GIỚI LEGNAXE</h2>
+                <p class="mb-4">LEGNAXE không chỉ là một câu chuyện, mà còn là một thế giới sống động với những bí ẩn, nhân vật và triết lý sâu sắc. Hãy cùng khám phá thêm về các nhân vật chính, các địa điểm quan trọng và những câu chuyện bên lề thú vị trong vũ trụ LEGNAXE.</p>
+                <ul class="mb-4 space-y-3 list-disc ml-6">
+                    <li><strong>Healiangel:</strong> Thiên thần luôn đứng ở ranh giới mỏng manh giữa ánh sáng và bóng tối, người mang trong mình sứ mệnh bảo vệ hoặc phá tan sự hòa hợp. Anh ta luôn có niềm đam mê mãnh liệt với cảm giác vượt qua những thử thách khó khăn nhất.</li>
+                    <li><strong>Đỉnh Thiên Giới:</strong> Nơi diễn ra những cuộc họp quan trọng của các thực thể thiên giới, chứa đựng những bí mật cổ xưa. <em>Biểu tượng của quyền lực và sự cân bằng mong manh.</em></li>
+                    <li><strong>Hành trình của con người:</strong> Những câu chuyện về các nhân vật phàm trần, những người đã thay đổi dòng chảy của lịch sử thiên giới. <em>Họ là những người bình thường với những lựa chọn phi thường.</em></li>
+                    <li><strong>Ngọn Lửa Vĩnh Cửu:</strong> Một ngọn lửa thần bí được cho là nguồn gốc của sự sống và sức mạnh, nhưng cũng là nguyên nhân của những cuộc chiến tranh không hồi kết.</li>
+                    <li><strong>Thư Viện Vũ Trụ:</strong> Một kho tàng tri thức vô tận, nơi lưu giữ những bí mật về sự sáng tạo và sự sụp đổ của các thế giới. <em>Những ai bước vào thư viện này đều phải trả một cái giá, nhưng liệu tri thức có đáng để đổi?</em></li>
+                </ul>
+                <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mt-6 mb-3 uppercase">Những Cái Tên Thiên Thần Nổi Bật Mà Các Bạn Có Thể Chưa Biết?</h3>
+                <ul class="mb-4 space-y-2 list-disc ml-6">
+                    <li><strong>I. Các Tổng Lãnh Thiên Thần (Archangels)</strong>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li>Lucifer – Thiên thần sa ngã, từng là Ánh sáng sao mai của Thiên Đàng.</li>
+                            <li>Michael (Micae) – Lãnh đạo thiên binh</li>
+                            <li>Gabriel (Jibril) – Sứ giả truyền tin</li>
+                            <li>Raphael – Thiên thần chữa lành</li>
+                            <li>Uriel – Thiên thần ánh sáng và trí tuệ</li>
+                        </ul>
+                    </li>
+                    <li><strong>II. Các Thiên Thần Khác</strong>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li>Metatron – Thư ký Thiên đình.</li>
+                            <li>Raziel – Thiên thần bí mật thiêng liêng.</li>
+                            <li>Chamuel – Thiên thần tình yêu và hòa bình.</li>
+                            <li>Healiangel – Thiên thần chữa lành và Khát vọng.</li>
+                            <li>Raguel – Thiên thần công lý.</li>
+                            <li>Belial – Thiên thần gian trá (Sa ngã).</li>
+                        </ul>
+                    </li>
+                    <li><strong>III. Các Thiên Thần Sa Ngã (Kẻ Thù Chính)</strong>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li>Leviathan – Quỷ vương kiêu ngạo.</li>
+                            <li>Asmodeus – Quỷ dục vọng.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section class="section section-dark">
+                <h2 class="text-3xl font-bold mb-4 uppercase">THIÊN THẦN TRÊN TRÁI ĐẤT</h2>
+                <p class="mb-4">Sau **Great Heaven's War**, nhiều thiên thần đã bị cuốn vào **Mưa Sao Băng Linh Hồn**, khiến họ tái sinh dưới hình hài con người trên Trái Đất, mất đi ký ức và quyền năng. Một số thiên thần sa ngã như Lucifer tự nguyện đến Trái Đất.</p>
+                <ul class="mb-4 space-y-3 list-disc ml-6">
+                    <li><strong>1. Healiangel (Hael):</strong>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li><strong>Tình trạng:</strong> Tái sinh dưới hình hài con người tại một làng quê ở Việt Nam, được bà Lan nuôi dưỡng.</li>
+                            <li><strong>Vai trò:</strong> Nhân vật chính, mang danh **"Khóa Cân Bằng"**, có khả năng chữa lành và đôi mắt ngọc bích đặc trưng.</li>
+                            <li><strong>Hành trình:</strong> Làm việc cho Lucifer ở Los Angeles, tìm kiếm các anh chị em thiên thần qua dấu hiệu năng lượng.</li>
+                        </ul>
+                    </li>
+                    <li><strong>2. Lucifer (Lucifer Morningstar):</strong>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li><strong>Tình trạng:</strong> Thiên thần sa ngã, giữ ký ức và một phần quyền năng, cải trang thành thiếu gia ở Los Angeles.</li>
+                            <li><strong>Vai trò:</strong> Thao túng Hael và săn lùng các thiên thần tái sinh.</li>
+                        </ul>
+                    </li>
+                    <li><strong>3. Các thiên thần vô danh trong Mưa Sao Băng Linh Hồn:</strong>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li><strong>Tình trạng:</strong> Mất ký ức và quyền năng, tái sinh dưới hình hài con người, sống rải rác.</li>
+                            <li><strong>Dấu hiệu nhận biết:</strong> Ánh sáng ngọc bích, khả năng chữa lành, hoặc giấc mơ về Thiên Đàng.</li>
+                        </ul>
+                    </li>
+                    <li><strong>4. Kael:</strong>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li><strong>Tình trạng:</strong> Người liên lạc của Quỹ Morningstar ở Trung Đông, nghi ngờ là thiên thần tái sinh.</li>
+                            <li><strong>Vai trò:</strong> Hỗ trợ Hael trong nhiệm vụ "cân bằng".</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p class="mb-4">Hành trình của Hael đầy thử thách khi anh tìm kiếm các anh chị em thiên thần, đối mặt với sự thao túng của Lucifer và làm sáng tỏ những bí ẩn của Trái Đất. Hãy tiếp tục theo dõi để khám phá thêm những điều kỳ diệu từ vũ trụ **LEGNAXE**!</p>
+            </section>
+            <section class="section section-light">
+                <h2 class="text-2xl font-semibold text-center text-blue-600 dark:text-blue-400 mb-6 uppercase">Thư Viện Ảnh LEGNAXE</h2>
+                <p class="text-center mb-6 text-gray-700 dark:text-gray-300">Khám phá những hình ảnh truyền cảm hứng từ thế giới LEGNAXE.</p>
+                <div class="gallery-scroll-box">
+                    <div class="gallery-item"><img alt="Hình ảnh LEGNAXE 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Không+Tìm+Thấy+Ảnh'" src="../images/pages/novels/pic-legnaxe3.jpg"/></div>
+                    <div class="gallery-item"><img alt="Hình ảnh LEGNAXE 2" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Không+Tìm+Thấy+Ảnh'" src="../images/pages/novels/pic-legnaxe4.jpg"/></div>
+                    <div class="gallery-item"><img alt="Hình ảnh LEGNAXE 3" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Không+Tìm+Thấy+Ảnh'" src="../images/pages/novels/pic-legnaxe5.jpg"/></div>
+                    <div class="gallery-item"><img alt="Hình ảnh LEGNAXE 4" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Không+Tìm+Thấy+Ảnh'" src="../images/pages/novels/pic-legnaxe6.jpg"/></div>
+                    <div class="gallery-item"><img alt="Thiên thần Gabriel 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Không+Tìm+Thấy+Ảnh'" src="../images/angels/angel-gabriel1.jpeg"/></div>
+                    <div class="gallery-item"><img alt="Thiên thần Michael 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Không+Tìm+Thấy+Ảnh'" src="../images/angels/angel-michael1.jpeg"/></div>
+                    <div class="gallery-item"><img alt="Thiên thần 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Không+Tìm+Thấy+Ảnh'" src="../images/angels/angel1.png"/></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- BILINGUAL CONTENT CONTAINER - CHINESE (ZH) -->
+        <!-- ============================================== -->
+        <div class="language-content hidden" id="content-zh">
+            <section class="section section-light">
+                <h2 class="text-3xl font-bold mb-4">探索 LEGNAXE 的世界 (Khám phá Thế giới LEGNAXE)</h2>
+                <p class="mb-4">LEGNAXE 不仅仅是一个故事，它是一个充满谜团、角色和深刻哲学的生动世界。深入了解 LEGNAXE 宇宙中的主要人物、关键地点和引人入胜的支线故事。</p>
+                <ul class="mb-4 space-y-3 list-disc ml-6">
+                    <li><strong>Healiangel (治愈天使/平衡之钥):</strong> 一位站在光明与黑暗之间微妙界限的天使，肩负着保护或打破这些对立力量之间和谐的使命。他渴望超越自我，而不是超越世界。他有趣的本性使他可以在瞬间被任何派系评判。</li>
+                    <li><strong>Celestial Pinnacle (天界之巅):</strong> 举行天界生物重要聚会的地方，拥有古老的秘密。 <em>天界之巅不仅是一个地方，更是力量与脆弱平衡的象征。</em></li>
+                    <li><strong>The Journey of Mortals (凡人的旅程):</strong> 凡人角色改变天界历史进程的故事。 <em>他们是做出非凡选择的普通人，在两个世界留下了不可磨灭的印记。</em></li>
+                    <li><strong>The Eternal Flame (永恒之火):</strong> 一种被认为是生命和力量源泉的神秘火焰，却也是无休止战争的根源。</li>
+                    <li><strong>The Cosmic Library (宇宙图书馆):</strong> 知识的无限宝库，储存着关于世界的创造和崩溃的秘密。 <em>进入这个图书馆的人必须付出代价，但知识值得牺牲吗？</em></li>
+                </ul>
+                <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mt-6 mb-3">你可能还不知道的著名天使名字？</h3>
+                <ul class="mb-4 space-y-2 list-disc ml-6">
+                    <li><strong>I. Archangels (大天使)</strong>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li>Lucifer (路西法) – 堕落天使，曾是天界的晨星。</li>
+                            <li>Michael (米迦勒) – 天界军队的领袖。</li>
+                            <li>Gabriel (加百列) – 信使天使。</li>
+                            <li>Raphael (拉斐尔) – 治愈天使。</li>
+                            <li>Uriel (乌列) – 光明与智慧的天使。</li>
+                        </ul>
+                    </li>
+                    <li><strong>II. Other Angels (其他天使)</strong>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li>Metatron (梅塔特隆) – 天界书记官。</li>
+                            <li>Raziel (拉结尔) – 神秘天使。</li>
+                            <li>Chamuel (卡麦尔) – 爱与和平的天使。</li>
+                            <li>Healiangel (治愈天使/赫利亚尔) – 治愈与渴望的天使。</li>
+                            <li>Raguel (拉贵尔) – 公正天使。</li>
+                            <li>Belial (彼列) – 欺骗天使（已堕落）。</li>
+                        </ul>
+                    </li>
+                    <li><strong>III. Fallen Angels (堕落天使 - 主要对手)</strong>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li>Leviathan (利维坦) – 骄傲的魔王。</li>
+                            <li>Asmodeus (阿斯摩太) – 淫欲的恶魔。</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section class="section section-dark">
+                <h2 class="text-3xl font-bold mb-4">地上的天使 (Thiên thần trên Trái Đất)</h2>
+                <p class="mb-4">在 **Great Heaven's War (天堂大战)** 之后，许多天使被卷入 **Soul Meteor Shower (灵魂流星雨)**，导致他们以人类的形态在地球上重生，失去了记忆和力量。一些堕落天使，如路西法，自愿来到地球。</p>
+                <ul class="mb-4 space-y-3 list-disc ml-6">
+                    <li><strong>1. Healiangel (Hael / 赫尔):</strong>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li><strong>状态:</strong> 失去记忆，在越南乡村重生，由兰阿姨抚养。</li>
+                            <li><strong>角色:</strong> 主角，被称为 **"平衡之钥"**，拥有治愈能力和独特的祖母绿眼睛。</li>
+                            <li><strong>旅程:</strong> 在洛杉矶为路西法工作，通过能量信号寻找他的天使兄弟姐妹。</li>
+                        </ul>
+                    </li>
+                    <li><strong>2. Lucifer (Lucifer Morningstar / 路西法·晨星):</strong>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li><strong>状态:</strong> 堕落天使，保留了记忆/部分力量，伪装成洛杉矶的富裕继承人。</li>
+                            <li><strong>角色:</strong> 操纵赫尔并猎杀转生天使以服务于他神秘的目的。</li>
+                        </ul>
+                    </li>
+                    <li><strong>3. Nameless Angels (无名天使):</strong>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li><strong>状态:</strong> 失去记忆和力量，散落在全球。</li>
+                            <li><strong>识别标志:</strong> 祖母绿光芒、治愈能力、幸存事故或天堂之梦。</li>
+                        </ul>
+                    </li>
+                    <li><strong>4. Kael (凯尔):</strong>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li><strong>状态:</strong> 晨星基金会驻中东的联络人，被怀疑是转生天使。</li>
+                            <li><strong>角色:</strong> 协助赫尔执行他的"平衡"任务。</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p class="mb-4">赫尔的旅程充满了挑战，他寻找他的天使兄弟姐妹，面对路西法的操纵，并解开地球的奥秘。请继续关注以探索 **LEGNAXE** 宇宙中的更多奇迹！</p>
+            </section>
+            <section class="section section-light">
+                <h2 class="text-2xl font-semibold text-center text-blue-600 dark:text-blue-400 mb-6">LEGNAXE 画廊 (Thư Viện Ảnh)</h2>
+                <p class="text-center mb-6 text-gray-700 dark:text-gray-300">探索 LEGNAXE 世界的视觉灵感。</p>
+                <div class="gallery-scroll-box">
+                    <div class="gallery-item"><img alt="LEGNAXE Image 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/pages/novels/pic-legnaxe3.jpg"/></div>
+                    <div class="gallery-item"><img alt="LEGNAXE Image 2" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/pages/novels/pic-legnaxe4.jpg"/></div>
+                    <div class="gallery-item"><img alt="LEGNAXE Image 3" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/pages/novels/pic-legnaxe5.jpg"/></div>
+                    <div class="gallery-item"><img alt="LEGNAXE Image 4" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/pages/novels/pic-legnaxe6.jpg"/></div>
+                    <div class="gallery-item"><img alt="Angel Gabriel 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/angels/angel-gabriel1.jpeg"/></div>
+                    <div class="gallery-item"><img alt="Angel Michael 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/angels/angel-michael1.jpeg"/></div>
+                    <div class="gallery-item"><img alt="Angel 1" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/200x200/e0e0e0/757575?text=Image+Not+Found'" src="../images/angels/angel1.png"/></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 transition-colors duration-300 ease-in-out mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
+            <p class="text-sm text-gray-500 dark:text-gray-400">© <span id="current-year">2025</span> LEGNAXE. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Theme and Language Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const htmlElement = document.documentElement;
+            const themeToggle = document.getElementById('theme-toggle');
+            const languageToggle = document.getElementById('language-toggle');
+            const currentYearSpan = document.getElementById('current-year');
+            const contentEn = document.getElementById('content-en');
+            const contentVi = document.getElementById('content-vi');
+            // Thêm container cho nội dung Tiếng Trung
+            const contentZh = document.getElementById('content-zh');
+
+            // --- Theme Toggle Logic ---
+            function applyTheme(isDark) {
+                htmlElement.classList.toggle('dark', isDark);
+                const icon = themeToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-moon', !isDark);
+                    icon.classList.toggle('fa-sun', isDark);
+                }
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            }
+
+            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const savedTheme = localStorage.getItem('theme');
+            let isDarkMode = savedTheme === 'dark' || (savedTheme === null && prefersDarkScheme);
+            applyTheme(isDarkMode);
+
+            themeToggle.addEventListener('click', () => {
+                isDarkMode = !htmlElement.classList.contains('dark');
+                applyTheme(isDarkMode);
+            });
+
+            // --- Language Toggle Logic ---
+            function applyLanguage(lang) {
+                const contents = [
+                    { element: contentEn, lang: 'en' },
+                    { element: contentVi, lang: 'vi' },
+                    { element: contentZh, lang: 'zh' } 
+                ];
+
+                contents.forEach(item => {
+                    if (item.element) {
+                         item.element.classList.toggle('hidden', lang !== item.lang);
+                    }
+                });
+                
+                localStorage.setItem('language', lang);
+                if (languageToggle) languageToggle.value = lang; 
+                
+                // Cập nhật lang attribute cho HTML
+                htmlElement.lang = lang === 'zh' ? 'zh-CN' : (lang === 'vi' ? 'vi' : 'en');
+            }
+
+            // Lấy ngôn ngữ đã lưu (ưu tiên VI)
+            const savedLanguage = localStorage.getItem('language') || 'vi'; 
+            applyLanguage(savedLanguage);
+            
+            if (languageToggle) {
+                languageToggle.addEventListener('change', (e) => {
+                    applyLanguage(e.target.value);
+                });
+            }
+
+            // --- Misc ---
+            if (currentYearSpan) {
+                currentYearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
+</body>
+</html>
