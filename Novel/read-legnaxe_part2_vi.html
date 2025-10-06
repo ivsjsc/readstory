@@ -32,6 +32,8 @@
                     colors: {
                         primary: '#3b82f6',
                         'primary-dark': '#2563eb',
+                        'accent-light': '#fcd34d', 
+                        'accent-dark': '#b45309', 
                     }
                 }
             },
@@ -50,6 +52,7 @@
             /* Light Mode Gradient: Tinh tế từ trắng ngà sang xanh nhạt/đất */
             background: linear-gradient(180deg, #F9FAFB 0%, #E5F3E7 100%);
             background-attachment: fixed;
+            padding-top: 5rem; /* Offset cho fixed header */
         }
         .dark body {
             /* Dark Mode Gradient: Đen than -> Maroon/Đỏ Đất (Unique touch for Conflict/Earth) */
@@ -79,7 +82,36 @@
     </style>
 </head>
 <body class="text-gray-800 dark:text-gray-200 transition-colors duration-300 ease-in-out font-sans antialiased" id="page-readnovel">
-    <header id="header-placeholder"></header>
+    
+    <!-- HEADER MỚI (Fixed Top) -->
+    <header class="fixed top-0 left-0 w-full z-50 shadow-lg bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm transition-colors duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+            <!-- Logo / Home Button -->
+            <div class="logo flex items-center">
+                <a aria-label="Trang Chủ" href="../index.html" class="flex items-center text-xl sm:text-2xl font-extrabold text-primary dark:text-accent-light tracking-wide hover:opacity-80 transition-opacity">
+                    <i class="fas fa-home mr-2 text-xl"></i> LEGNAXE
+                </a>
+            </div>
+            
+            <!-- Toggles and Links (Mobile-First) -->
+            <nav class="flex items-center space-x-3 sm:space-x-4">
+                <!-- Chế độ Tối Toggle -->
+                <button aria-label="Toggle light/dark mode" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent-light focus:outline-none p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 ease-in-out" id="theme-toggle">
+                    <i class="fas fa-moon text-xl"></i>
+                </button>
+                
+                <!-- Language Switch Button (VI/EN/ZH) -->
+                <button id="header-lang-switch-btn" class="px-3 py-2 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-300 ease-in-out flex items-center justify-center dark:bg-blue-700 dark:hover:bg-blue-800" title="Chuyển đổi ngôn ngữ đọc">
+                    <i class="fas fa-language"></i>
+                </button>
+                
+                <!-- Nút Danh Sách Chương (Ẩn trên mobile, hiện trên desktop) -->
+                <a id="nav-chapter-list" class="hidden md:inline-flex px-4 py-2 rounded-xl font-semibold text-white bg-green-600 hover:bg-green-700 transition-colors shadow-md" href="#" onclick="event.preventDefault(); openModal();" data-lang-key="list_chapters_button">
+                    <i class="fas fa-list-ul mr-2"></i>Chương
+                </a>
+            </nav>
+        </div>
+    </header>
 
     <main class="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-12">
         <h1 class="text-4xl sm:text-5xl font-extrabold text-center text-gray-800 dark:text-gray-100 mb-8" data-lang-key="readnovel_part2_title">LEGNAXE: Phần 2 - Thiên Thượng, Lòng Người</h1>
@@ -109,7 +141,7 @@
                 </div>
             </div>
             
-            <!-- Hàng 2: TTS và Ngôn ngữ -->
+            <!-- Hàng 2: TTS và Trang Chủ (Dành cho Mobile, Desktop dùng Header) -->
             <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
                 <!-- 2a. TTS Button (Play/Pause) -->
                 <button id="tts-toggle-btn" class="w-full sm:w-1/2 px-4 py-2 rounded-xl font-semibold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 transition-all duration-300 ease-in-out flex items-center justify-center dark:bg-indigo-700 dark:hover:bg-indigo-800" title="Đọc văn bản">
@@ -117,7 +149,7 @@
                     <span id="tts-text">Nghe truyện</span>
                 </button>
                 
-                <!-- 2b. Language Switch Button (MỚI) -->
+                <!-- 2b. Language Switch Button (Di chuyển xuống Navigation bar) -->
                 <button id="lang-switch-btn" class="w-full sm:w-1/2 px-4 py-2 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-300 ease-in-out flex items-center justify-center dark:bg-blue-700 dark:hover:bg-blue-800" title="Chuyển đổi ngôn ngữ">
                     <i class="fas fa-language mr-2"></i>
                     <span id="lang-switch-text">Switch to English</span>
@@ -131,7 +163,11 @@
                 <p class="text-center text-gray-500 dark:text-gray-400">Đang tải chương truyện...</p>
             </div>
 
+            <!-- CẬP NHẬT: THÊM NÚT VỀ TRANG CHỦ VÀO NAVIGATION -->
             <div class="navigation flex flex-col sm:flex-row justify-between items-center mt-10 mb-6 space-y-3 sm:space-y-0 sm:space-x-3">
+                <a href="../index.html" id="go-home-btn" class="w-full sm:w-auto px-6 py-3 rounded-xl font-semibold text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 transition-all duration-300 ease-in-out transform hover:scale-[1.02] flex items-center justify-center" data-lang-key="home_button">
+                    <i class="fas fa-home mr-2"></i>Trang Chủ
+                </a>
                 <button id="list-chapter-btn" class="w-full sm:w-auto px-6 py-3 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-300 ease-in-out transform hover:scale-[1.02] flex items-center justify-center" data-lang-key="list_chapters_button">
                     <i class="fas fa-list-ul mr-2"></i>Danh Sách Chương
                 </button>
@@ -163,16 +199,28 @@
     <footer id="footer-placeholder"></footer>
 
     <!-- Scripts -->
-    <script src="/js/utils.js"></script>
-    <script src="/js/language.js"></script>
-    <script src="/js/loadComponents.js"></script>
-    <!-- Relative path to chapter-loader -->
+    <script>
+        // Hàm mở modal để sử dụng với nút ở header
+        function openModal() {
+            const chapterModal = document.getElementById('chapter-modal');
+            chapterModal.style.display = 'flex';
+            setTimeout(() => {
+                chapterModal.classList.add('modal-active');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+    </script>
+    <!-- Relative path to core reader scripts -->
+    <!-- Giả định các script utils.js, language.js, loadComponents.js tồn tại và được gọi ở đây -->
+    <!-- <script src="/js/utils.js"></script> -->
+    <!-- <script src="/js/language.js"></script> -->
+    <!-- <script src="/js/loadComponents.js"></script> -->
     <script src="../js/chapter-loader.js"></script>
     
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const storyPath = 'legnaxe_part2'; // Tên thư mục chứa JSON
-            const totalChapters = 40; // Tổng số chương 
+            const totalChapters = 30; // Tổng số chương 
             const hasSpecialChapter = false; // Phần 2 không có epilogue
             const lang = 'vi'; // Ngôn ngữ Tiếng Việt
 
@@ -182,10 +230,12 @@
             }
             
             // --- UI LOGIC (Theme and Font Size) ---
-            const themeToggle = document.getElementById('theme-toggle');
             const htmlElement = document.documentElement;
+            
+            // Theme Toggle
+            const themeToggle = document.getElementById('theme-toggle');
             const themeIcon = themeToggle?.querySelector('i');
-
+            
             function applyTheme(isDark) {
                 htmlElement.classList.toggle('dark', isDark);
                 if (themeIcon) {
@@ -205,6 +255,7 @@
                 applyTheme(currentIsDarkMode);
             });
             
+            // Font Size Controls
             const decreaseFontBtn = document.getElementById('decrease-font-btn');
             const resetFontBtn = document.getElementById('reset-font-btn');
             const increaseFontBtn = document.getElementById('increase-font-btn');
@@ -247,6 +298,19 @@
                     scrollToTopBtn.classList.add('hidden');
                 }
             });
+
+            // Gắn sự kiện cho nút chuyển ngôn ngữ ở Header
+            const headerLangSwitchBtn = document.getElementById('header-lang-switch-btn');
+            const mobileLangSwitchBtn = document.getElementById('lang-switch-btn');
+            
+            function triggerLanguageSwitch() {
+                 if (typeof switchLanguage === 'function') {
+                    switchLanguage();
+                 }
+            }
+            
+            headerLangSwitchBtn?.addEventListener('click', triggerLanguageSwitch);
+            mobileLangSwitchBtn?.addEventListener('click', triggerLanguageSwitch);
         });
     </script>
 </body>

@@ -166,7 +166,7 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, in
                     // LƯU TRỮ TIÊU ĐỀ ĐA NGÔN NGỮ VÀO DATASET
                     modalLink.dataset.titleVi = data['title_vi'] || `Chương ${i + 1}`;
                     modalLink.dataset.titleEn = data['title_en'] || `Chapter ${i + 1}`;
-                    // Đảm bảo hỗ trợ Tiếng Trung
+                    // Thêm hỗ trợ Tiếng Trung
                     modalLink.dataset.titleZh = data['title_zh'] || `第 ${i + 1} 章`; 
 
                     // Cập nhật tiêu đề theo ngôn ngữ hiện tại
@@ -225,7 +225,7 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, in
             return;
         }
         
-        // Lấy tiêu đề và nội dung theo ngôn ngữ hiện tại
+        // Lấy tiêu đề và nội dung theo ngôn ngữ hiện tại (hỗ trợ ZH)
         const titleKey = `title_${lang}`;
         const contentKey = `content_${lang}`;
 
@@ -247,6 +247,9 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, in
         // Cập nhật tiêu đề trang
         document.title = `${title} - LEGNAXE Part ${partNumber} (${currentChapterId})`;
         
+        // Cập nhật thuộc tính lang của HTML
+        document.documentElement.lang = lang === 'zh' ? 'zh-CN' : (lang === 'vi' ? 'vi' : 'en');
+
         // Cuộn đến vị trí đã lưu hoặc đầu nội dung
         if (scrollToSavedPosition) {
             loadScrollPosition(currentChapterId);
@@ -280,7 +283,7 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, in
              ttsButton.classList.remove('bg-blue-600', 'hover:bg-blue-700', 'bg-indigo-600', 'hover:bg-indigo-700');
              ttsButton.classList.add('bg-gray-400', 'cursor-not-allowed', 'dark:bg-gray-600');
              ttsIcon.className = 'fas fa-volume-off mr-2';
-             ttsText.textContent = (lang === 'vi' ? 'Không hỗ trợ' : (lang === 'zh' ? '不支持' : 'Not Supported'));
+             ttsText.textContent = (lang === 'vi' ? 'Không hỗ trợ' : (lang === 'zh' ? '不支持 TTS' : 'TTS Not Supported'));
              return;
         }
 
@@ -290,7 +293,7 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, in
 
         if (isSpeaking) {
             ttsIcon.className = 'fas fa-pause mr-2';
-            ttsText.textContent = (lang === 'vi' ? 'Tạm dừng' : (lang === 'zh' ? '暂停' : 'Pause'));
+            ttsText.textContent = (lang === 'vi' ? 'Tạm dừng' : (lang === 'zh' ? '暂停朗读' : 'Pause Reading'));
         } else {
             ttsIcon.className = 'fas fa-play mr-2';
             ttsText.textContent = (lang === 'vi' ? 'Nghe truyện' : (lang === 'zh' ? '朗读故事' : 'Read Story'));
